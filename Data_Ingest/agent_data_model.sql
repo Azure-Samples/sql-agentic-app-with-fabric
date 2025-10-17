@@ -1,82 +1,134 @@
--- Use this to create the core chat history tables:
+CREATE TABLE [dbo].[agent_definitions](
+	[agent_id] [bigint] NOT NULL,
+	[name] [nvarchar](255) NOT NULL,
+	[version] [nchar](10) NOT NULL,
+	[description] [nvarchar](max) NULL,
+	[llm_config] [nvarchar](max) NOT NULL,
+	[prompt_template] [nvarchar](max) NOT NULL,
+ CONSTRAINT [PK__agent_de__2C05379EFE5AF58F] PRIMARY KEY CLUSTERED 
+(
+	[agent_id] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ__agent_de__72E12F1B351FAA8D] UNIQUE NONCLUSTERED 
+(
+	[name] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
 
--- 1. Chat Sessions Table to manage individual conversation sessions
-CREATE TABLE chat_sessions (
-    session_id NVARCHAR(255) PRIMARY KEY,
-    user_id NVARCHAR(255) NOT NULL,
-    title NVARCHAR(500),
-    created_at DATETIME2 DEFAULT GETUTCDATE(),
-    updated_at DATETIME2 DEFAULT GETUTCDATE()
-);
+CREATE TABLE [dbo].[runs](
+	[run_id] [bigint] NOT NULL,
+	[thread_id] [bigint] NOT NULL,
+	[input] [nvarchar](max) NOT NULL,
+	[output] [nvarchar](max) NOT NULL,
+	[start_time] [datetime] NOT NULL,
+	[end_time] [datetime] NULL,
+	[status] [nvarchar](10) NULL,
+	[total_tokens] [int] NULL,
+	[input_tokens] [int] NULL,
+	[output_tokens] [int] NULL,
+ CONSTRAINT [PK_runs] PRIMARY KEY CLUSTERED 
+(
+	[run_id] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
 
--- 2. Agent Definitions Table 
-CREATE TABLE agent_definitions (
-    agent_id NVARCHAR(255) PRIMARY KEY,
-    name NVARCHAR(255) UNIQUE NOT NULL,  
-    description NVARCHAR(MAX),
-    llm_config NVARCHAR(MAX) NOT NULL,   -- This should be JSON type if supported, otherwise NVARCHAR(MAX)
-    prompt_template NVARCHAR(MAX) NOT NULL
-);
+CREATE TABLE [dbo].[threads](
+	[thread_id] [bigint] IDENTITY(1,1) NOT NULL,
+	[user_id] [bigint] NOT NULL,
+	[created_time] [datetime] NOT NULL,
+	[last_update_date] [datetime] NOT NULL,
+	[agent_id] [bigint] NOT NULL,
+ CONSTRAINT [PK_threads] PRIMARY KEY CLUSTERED 
+(
+	[thread_id] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
 
--- 3. Tool Definitions Table (moved up before other tables that reference it)
-CREATE TABLE tool_definitions (
-    tool_id NVARCHAR(255) PRIMARY KEY,  -- Changed from 'id' to 'tool_id'
-    name NVARCHAR(255) UNIQUE NOT NULL,
-    description NVARCHAR(MAX),
-    input_schema NVARCHAR(MAX) NOT NULL, -- JSON Schema for input validation
-    version NVARCHAR(50) DEFAULT '1.0.0',
-    is_active BIT DEFAULT 1,
-    cost_per_call_cents INT DEFAULT 0,
-    created_at DATETIME2 DEFAULT GETUTCDATE(),
-    updated_at DATETIME2 DEFAULT GETUTCDATE()
-);
+CREATE TABLE [dbo].[tool_calls](
+	[tool_call_id] [bigint] NOT NULL,
+	[tool_id] [bigint] NOT NULL,
+	[run_id] [bigint] NOT NULL,
+	[start_time] [datetime] NULL,
+	[end_time] [datetime] NULL,
+	[status] [nvarchar](50) NULL,
+	[attributes] [nvarchar](max) NULL,
+	[input] [nvarchar](max) NULL,
+	[output] [nvarchar](max) NULL,
+ CONSTRAINT [PK_tool_calls] PRIMARY KEY CLUSTERED 
+(
+	[tool_call_id] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
 
+CREATE TABLE [dbo].[tool_definitions](
+	[tool_id] [bigint] NOT NULL,
+	[name] [nvarchar](255) NOT NULL,
+	[description] [nvarchar](max) NULL,
+	[input_schema] [nvarchar](max) NOT NULL,
+	[version] [nvarchar](50) NULL,
+	[is_active] [bit] NULL,
+	[created_at] [datetime2](7) NULL,
+	[updated_at] [datetime2](7) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[tool_id] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+UNIQUE NONCLUSTERED 
+(
+	[name] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
 
--- 4. Chat History Table for storing all conversation messages and tool interactions
-CREATE TABLE chat_history (
-    message_id NVARCHAR(255) PRIMARY KEY,
-    session_id NVARCHAR(255) NOT NULL,
-    trace_id NVARCHAR(255) NOT NULL,     -- Add trace_id field
-    user_id NVARCHAR(255) NOT NULL,
-    agent_id NVARCHAR(255),              -- Add agent_id field
-    message_type NVARCHAR(50) NOT NULL,  -- 'human', 'ai', 'system', 'tool_call', 'tool_result'
-    content NVARCHAR(MAX),
- 
-    model_name NVARCHAR(255),          -- Add model_name field
-    content_filter_results NVARCHAR(MAX) DEFAULT '{}', -- JSON data for content filter results
-    total_tokens INT,                   -- Total tokens in the message
-    completion_tokens INT,              -- Tokens used for completion
-    prompt_tokens INT,                  -- Tokens used for the prompt
-
-    finish_reason NVARCHAR(255),       -- Reason for finishing the message
-    response_time_ms INT,              -- Response time in milliseconds
-    trace_end DATETIME2 DEFAULT GETUTCDATE(),           -- End time of the trace
-
-    -- Tool usage fields (embedded in message)
-    tool_call_id NVARCHAR(255),
-    tool_name NVARCHAR(255),
-    tool_input NVARCHAR(MAX),            -- JSON data for tool input parameters
-    tool_output NVARCHAR(MAX),           -- JSON data for tool output/results
-    tool_id NVARCHAR(255),               -- Add tool_id field
-
-);
-
-
--- 5. Tool Usage Table for detailed metrics and tracking for individual tool executions
-CREATE TABLE tool_usage (
-    tool_call_id NVARCHAR(255) PRIMARY KEY,  -- Changed from 'id' to 'tool_call_id' to match Python model
-    session_id NVARCHAR(255) NOT NULL,
-    trace_id NVARCHAR(255),              -- Add trace_id field
-    tool_id NVARCHAR(255) NOT NULL,      -- Add tool_id field (foreign key to tool_definitions)
-    tool_name NVARCHAR(255) NOT NULL,
-    tool_input NVARCHAR(MAX) NOT NULL,   -- JSON data for input parameters
-    tool_output NVARCHAR(MAX),           -- JSON data for output/results
-    status NVARCHAR(50) DEFAULT 'pending', -- 'pending', 'success', 'error', 'timeout'
-    tokens_used INT,                     -- Number of tokens consumed
-);
-
--- Foreign Key Constraints
--- Link chat_history to chat_sessions
-ALTER TABLE chat_history 
-ADD CONSTRAINT FK_chat_history_session 
-FOREIGN KEY (session_id) REFERENCES chat_sessions(session_id);
+CREATE TABLE [dbo].[users](
+	[user_id] [bigint] NOT NULL,
+	[user_guid] [nvarchar](255) NOT NULL,
+	[description] [nvarchar](500) NULL,
+	[user_name] [nvarchar](500) NOT NULL,
+ CONSTRAINT [PK_users] PRIMARY KEY CLUSTERED 
+(
+	[user_id] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[threads] ADD  CONSTRAINT [DF_threads_created_time]  DEFAULT (getdate()) FOR [created_time]
+GO
+ALTER TABLE [dbo].[threads] ADD  CONSTRAINT [DF_threads_last_update_date]  DEFAULT (getdate()) FOR [last_update_date]
+GO
+ALTER TABLE [dbo].[tool_definitions] ADD  DEFAULT ('1.0.0') FOR [version]
+GO
+ALTER TABLE [dbo].[tool_definitions] ADD  DEFAULT ((1)) FOR [is_active]
+GO
+ALTER TABLE [dbo].[tool_definitions] ADD  DEFAULT (getutcdate()) FOR [created_at]
+GO
+ALTER TABLE [dbo].[tool_definitions] ADD  DEFAULT (getutcdate()) FOR [updated_at]
+GO
+ALTER TABLE [dbo].[runs]  WITH CHECK ADD  CONSTRAINT [FK_runs_threads] FOREIGN KEY([thread_id])
+REFERENCES [dbo].[threads] ([thread_id])
+GO
+ALTER TABLE [dbo].[runs] CHECK CONSTRAINT [FK_runs_threads]
+GO
+ALTER TABLE [dbo].[threads]  WITH CHECK ADD  CONSTRAINT [FK_threads_users] FOREIGN KEY([user_id])
+REFERENCES [dbo].[users] ([user_id])
+GO
+ALTER TABLE [dbo].[threads] CHECK CONSTRAINT [FK_threads_users]
+GO
+ALTER TABLE [dbo].[tool_calls]  WITH CHECK ADD  CONSTRAINT [FK_tool_calls_run_steps] FOREIGN KEY([run_id])
+REFERENCES [dbo].[run_steps] ([run_step_id])
+GO
+ALTER TABLE [dbo].[tool_calls] CHECK CONSTRAINT [FK_tool_calls_run_steps]
+GO
+ALTER TABLE [dbo].[tool_calls]  WITH CHECK ADD  CONSTRAINT [FK_tool_calls_runs] FOREIGN KEY([run_id])
+REFERENCES [dbo].[runs] ([run_id])
+GO
+ALTER TABLE [dbo].[tool_calls] CHECK CONSTRAINT [FK_tool_calls_runs]
+GO
+ALTER TABLE [dbo].[tool_calls]  WITH CHECK ADD  CONSTRAINT [FK_tool_calls_tool_definitions] FOREIGN KEY([tool_id])
+REFERENCES [dbo].[tool_definitions] ([tool_id])
+GO
+ALTER TABLE [dbo].[tool_calls] CHECK CONSTRAINT [FK_tool_calls_tool_definitions]
+GO
