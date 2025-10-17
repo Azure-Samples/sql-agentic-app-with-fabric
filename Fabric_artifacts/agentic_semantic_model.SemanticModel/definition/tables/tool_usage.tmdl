@@ -1,0 +1,114 @@
+table tool_usage
+	lineageTag: 2afd3ee3-0766-4610-b26c-d61460d2f5dc
+	sourceLineageTag: [dbo].[tool_usage]
+
+	column tool_call_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: ae2d9124-3328-4d4f-a503-6b888f6b8826
+		sourceLineageTag: tool_call_id
+		summarizeBy: none
+		sourceColumn: tool_call_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column session_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: ef0a5cbe-1a71-4f72-aa25-28ae4d9f5659
+		sourceLineageTag: session_id
+		summarizeBy: none
+		sourceColumn: session_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column trace_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 15fb0149-1c78-4424-ac0f-dbfb0a22a269
+		sourceLineageTag: trace_id
+		summarizeBy: none
+		sourceColumn: trace_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tool_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 9e696af6-0a4a-4ca6-8711-3b19b8d19748
+		sourceLineageTag: tool_id
+		summarizeBy: none
+		sourceColumn: tool_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tool_name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: ffef35fe-c042-4d6d-9f5b-4736c7e25ad8
+		sourceLineageTag: tool_name
+		summarizeBy: none
+		sourceColumn: tool_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column tool_input
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 8db3ea1d-f8b0-427f-9825-cfbb7ac9862f
+		sourceLineageTag: tool_input
+		summarizeBy: none
+		sourceColumn: tool_input
+
+		annotation SummarizationSetBy = Automatic
+
+	column tool_output
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 22673abe-5e0e-425e-ba9b-fb9873030d78
+		sourceLineageTag: tool_output
+		summarizeBy: none
+		sourceColumn: tool_output
+
+		annotation SummarizationSetBy = Automatic
+
+	column tool_message
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: a6035fd0-34fd-48ed-aa1d-8467f21798fd
+		sourceLineageTag: tool_message
+		summarizeBy: none
+		sourceColumn: tool_message
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: f41f90df-5c39-40c9-870d-0d5130ebcf04
+		sourceLineageTag: status
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column tokens_used
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 59cf22f0-fd2b-46c6-80eb-c2d657358552
+		sourceLineageTag: tokens_used
+		summarizeBy: sum
+		sourceColumn: tokens_used
+
+		annotation SummarizationSetBy = Automatic
+
+	partition tool_usage = entity
+		mode: directLake
+		source
+			entityName: tool_usage
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

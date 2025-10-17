@@ -409,6 +409,7 @@ def chatbot():
         - You can use the provided tools to answer user questions and perform tasks.
         - If you were unable to find an answer, inform the user.
         - Do not use your general knowledge to answer questions.""",
+        name = "banking_agent_v1"
     )
     
     # Thread config for session management

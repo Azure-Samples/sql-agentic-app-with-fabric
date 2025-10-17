@@ -1,0 +1,468 @@
+{
+  "config": "{\"version\":\"5.67\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY25SU10\",\"type\":2,\"version\":{\"visual\":\"2.1.0\",\"report\":\"3.0.0\",\"page\":\"2.3.0\"}}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":0,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY25SU10",
+            "path": "BaseThemes/CY25SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "App Usage",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "05fb4ab77a05eae457bd",
+      "ordinal": 4,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"0653ca738664b064e97d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":682.4668227946917,\"y\":134.89461358313818,\"z\":1000,\"width\":597.5331772053083,\"height\":277.78298204527715,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"session_duration_date.date\",\"active\":true}],\"Y\":[{\"queryRef\":\"CountNonNull(session_duration_date.user_id)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"session_duration_date\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"date\"},\"Name\":\"session_duration_date.date\",\"NativeReferenceName\":\"Day\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"user_id\"}},\"Function\":2},\"Name\":\"CountNonNull(session_duration_date.user_id)\",\"NativeReferenceName\":\"Active Users\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"date\"}}}]},\"columnProperties\":{\"CountNonNull(session_duration_date.user_id)\":{\"displayName\":\"Active Users\"},\"session_duration_date.date\":{\"displayName\":\"Day\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"categoryAxis\":[{\"properties\":{\"axisType\":{\"expr\":{\"Literal\":{\"Value\":\"'Categorical'\"}}}}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#007436'\"}}}}}},\"selector\":{\"metadata\":\"CountNonNull(session_duration_date.user_id)\"}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'DAU'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 277.78,
+          "width": 597.53,
+          "x": 682.47,
+          "y": 134.89,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"27937426cd0600d08ac0\",\"layouts\":[{\"id\":0,\"position\":{\"x\":22.982045277127245,\"y\":112.91178766588604,\"z\":6000,\"width\":279.78142076502735,\"height\":39.968774395003905,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Executive Summary:\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"12pt\"}}]}]}}]},\"vcObjects\":{\"background\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#E6FF00'\"}}}}}}}]}}}",
+          "filters": "[]",
+          "height": 39.97,
+          "width": 279.78,
+          "x": 22.98,
+          "y": 112.91,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"3c0aa4c1b74616976c0c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":496.61202185792354,\"y\":0,\"z\":4000,\"width\":286.77595628415304,\"height\":32.97423887587822,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"App Usage Insights\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"12pt\"}}],\"horizontalTextAlignment\":\"center\"}]}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"background\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.1}}}}}}}]}}}",
+          "filters": "[]",
+          "height": 32.97,
+          "width": 286.78,
+          "x": 496.61,
+          "y": 0.00,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"72c3667e32770e051c69\",\"layouts\":[{\"id\":0,\"position\":{\"x\":682.4668227946917,\"y\":442.65417642466826,\"z\":2000,\"width\":586.5417642466823,\"height\":277.78298204527715,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"lineStackedColumnComboChart\",\"projections\":{\"Category\":[{\"queryRef\":\"session_duration_date.date\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(session_duration_date.sess_duration)\",\"hidden\":true},{\"queryRef\":\"select\"}],\"Y2\":[{\"queryRef\":\"CountNonNull(session_duration_date.sess_duration)\",\"hidden\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"session_duration_date\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"date\"},\"Name\":\"session_duration_date.date\",\"NativeReferenceName\":\"Day\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"sess_duration\"}},\"Function\":0},\"Name\":\"Sum(session_duration_date.sess_duration)\",\"NativeReferenceName\":\"Sum of sess_duration\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"sess_duration\"}},\"Function\":1},\"Name\":\"CountNonNull(session_duration_date.sess_duration)\",\"NativeReferenceName\":\"Average of sess_duration\"},{\"NativeVisualCalculation\":{\"Language\":\"dax\",\"Expression\":\"[Average of sess_duration]/60\",\"Name\":\"Avg App Usage Duration (Minutes)\"},\"Name\":\"select\",\"NativeReferenceName\":\"Avg App Usage Duration (Minutes)\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"date\"}}}]},\"columnProperties\":{\"session_duration_date.date\":{\"displayName\":\"Day\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"categoryAxis\":[{\"properties\":{\"axisType\":{\"expr\":{\"Literal\":{\"Value\":\"'Categorical'\"}}}}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"FillRule\":{\"Input\":{\"SelectRef\":{\"ExpressionName\":\"select\"}},\"FillRule\":{\"linearGradient2\":{\"min\":{\"color\":{\"Literal\":{\"Value\":\"'#B5EAA9'\"}}},\"max\":{\"color\":{\"Literal\":{\"Value\":\"'#195F07'\"}}},\"nullColoringStrategy\":{\"strategy\":{\"Literal\":{\"Value\":\"'asZero'\"}}}}}}}}}}},\"selector\":{\"data\":[{\"dataViewWildcard\":{\"matchingOption\":1}}]}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Avg Daily App Usage (in minutes)'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 277.78,
+          "width": 586.54,
+          "x": 682.47,
+          "y": 442.65,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"79127ef45a0e9537305a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":22.982045277127245,\"y\":442.65417642466826,\"z\":0,\"width\":640.4996096799375,\"height\":277.78298204527715,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"UserAsks.date\",\"active\":true}],\"Y\":[{\"queryRef\":\"Count(chat_history.session_id)\"}],\"Y2\":[{\"queryRef\":\"Count(chat_history.trace_id)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"u\",\"Entity\":\"UserAsks\",\"Type\":0},{\"Name\":\"c\",\"Entity\":\"chat_history\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"u\"}},\"Property\":\"date\"},\"Name\":\"UserAsks.date\",\"NativeReferenceName\":\"date\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"session_id\"}},\"Function\":2},\"Name\":\"Count(chat_history.session_id)\",\"NativeReferenceName\":\"# Active Sessions\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"trace_id\"}},\"Function\":2},\"Name\":\"Count(chat_history.trace_id)\",\"NativeReferenceName\":\"User Questions\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"u\"}},\"Property\":\"date\"}}}]},\"columnProperties\":{\"Count(chat_history.session_id)\":{\"displayName\":\"# Active Sessions\"},\"Count(chat_history.trace_id)\":{\"displayName\":\"User Questions\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"categoryAxis\":[{\"properties\":{\"axisType\":{\"expr\":{\"Literal\":{\"Value\":\"'Categorical'\"}}}}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":4,\"Percent\":0}}}}}},\"selector\":{\"metadata\":\"CountNonNull(chat_history.session_id)\"}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":3,\"Percent\":0.2}}}}}}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#007436'\"}}}}}},\"selector\":{\"metadata\":\"Count(chat_history.session_id)\"}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0}}}}}},\"selector\":{\"metadata\":\"Count(chat_history.trace_id)\"}}],\"valueAxis\":[{\"properties\":{\"start\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}],\"lineStyles\":[{\"properties\":{\"lineStyle\":{\"expr\":{\"Literal\":{\"Value\":\"'dashed'\"}}}},\"selector\":{\"metadata\":\"Count(chat_history.trace_id)\"}}]}}}",
+          "filters": "[{\"name\":\"5eb73e031843146a6932\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"UserAsks\"}},\"Property\":\"date\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"u\",\"Entity\":\"UserAsks\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"u\"}},\"Property\":\"date\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"null\"}}]]}}}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"isHiddenInViewMode\":false,\"isLockedInViewMode\":true}]",
+          "height": 277.78,
+          "width": 640.50,
+          "x": 22.98,
+          "y": 442.65,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"b1206a8701617eb060d8\",\"layouts\":[{\"id\":0,\"position\":{\"x\":22.982045277127245,\"y\":161.87353629976582,\"z\":5000,\"width\":586.5417642466823,\"height\":250.80405932864952,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"aiNarratives\",\"drillFilterOtherVisuals\":true,\"objects\":{\"narrativeSelection\":[{\"properties\":{\"dismissSelectionScreen\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 250.80,
+          "width": 586.54,
+          "x": 22.98,
+          "y": 161.87,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"feaa6a5b698bc8c3dc2a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":818.360655737705,\"y\":25.979703356752538,\"z\":3000,\"width\":461.6393442622951,\"height\":106.91647150663545,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"session_duration_date.date\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"session_duration_date\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"date\"},\"Name\":\"session_duration_date.date\",\"NativeReferenceName\":\"Date\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"date\"}}}]},\"columnProperties\":{\"session_duration_date.date\":{\"displayName\":\"Date\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"data\":[{\"properties\":{\"endDate\":{\"expr\":{\"Literal\":{\"Value\":\"datetime'2025-10-17T00:00:00'\"}}},\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Between'\"}}}}}],\"general\":[{\"properties\":{\"orientation\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}},\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"session_duration_date\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Comparison\":{\"ComparisonKind\":3,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"date\"}},\"Right\":{\"Literal\":{\"Value\":\"datetime'2025-10-18T00:00:00'\"}}}}}]}}}}]}}}",
+          "filters": "[]",
+          "height": 106.92,
+          "width": 461.64,
+          "x": 818.36,
+          "y": 25.98,
+          "z": 3000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Usage Tracking",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "1a8c2b8de28b91b5be50",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"2de931e01864b9e4ae58\",\"layouts\":[{\"id\":0,\"position\":{\"x\":602.5292740046839,\"y\":485.62060889929745,\"z\":0,\"width\":636.5027322404372,\"height\":207.8376268540203,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Sum(chat_history.total_tokens)\"}],\"Series\":[{\"queryRef\":\"chat_history.message_type\"}],\"Category\":[{\"queryRef\":\"UserAsks.date\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"chat_history\",\"Type\":0},{\"Name\":\"u\",\"Entity\":\"UserAsks\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"total_tokens\"}},\"Function\":0},\"Name\":\"Sum(chat_history.total_tokens)\",\"NativeReferenceName\":\"Total Tokens Used\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"message_type\"},\"Name\":\"chat_history.message_type\",\"NativeReferenceName\":\"Response Type\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"u\"}},\"Property\":\"date\"},\"Name\":\"UserAsks.date\",\"NativeReferenceName\":\"date\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"u\"}},\"Property\":\"date\"}}}]},\"columnProperties\":{\"Sum(chat_history.total_tokens)\":{\"displayName\":\"Total Tokens Used\"},\"chat_history.message_type\":{\"displayName\":\"Response Type\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"categoryAxis\":[{\"properties\":{\"axisType\":{\"expr\":{\"Literal\":{\"Value\":\"'Categorical'\"}}}}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":9,\"Percent\":0}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"chat_history\"}},\"Property\":\"message_type\"}},\"Right\":{\"Literal\":{\"Value\":\"'ai'\"}}}}}]}}]}}}",
+          "filters": "[{\"name\":\"248dfcaa0d6aea70ed36\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"UserAsks\"}},\"Property\":\"date\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"u\",\"Entity\":\"UserAsks\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"u\"}},\"Property\":\"date\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"null\"}}]]}}}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"isHiddenInViewMode\":false,\"isLockedInViewMode\":true}]",
+          "height": 207.84,
+          "width": 636.50,
+          "x": 602.53,
+          "y": 485.62,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"38c4866abe42c20c08b1\",\"layouts\":[{\"id\":0,\"position\":{\"x\":44.96487119437939,\"y\":485.62060889929745,\"z\":5000,\"width\":542.576112412178,\"height\":207.8376268540203,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"projections\":{\"Category\":[{\"queryRef\":\"chat_history.tool_name\",\"active\":true}],\"Y\":[{\"queryRef\":\"CountNonNull(chat_history.trace_id)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"chat_history\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"tool_name\"},\"Name\":\"chat_history.tool_name\",\"NativeReferenceName\":\"Tools used\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"trace_id\"}},\"Function\":2},\"Name\":\"CountNonNull(chat_history.trace_id)\",\"NativeReferenceName\":\"Tool Usage Summary\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"trace_id\"}},\"Function\":2}}}]},\"columnProperties\":{\"chat_history.tool_name\":{\"displayName\":\"Tools used\"},\"CountNonNull(chat_history.trace_id)\":{\"displayName\":\"Tool Usage Summary\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":7,\"Percent\":-0.25}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"chat_history\"}},\"Property\":\"tool_name\"}},\"Right\":{\"Literal\":{\"Value\":\"'get_user_accounts'\"}}}}}]}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":2,\"Percent\":0.6}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"chat_history\"}},\"Property\":\"tool_name\"}},\"Right\":{\"Literal\":{\"Value\":\"'search_support_documents'\"}}}}}]}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":7,\"Percent\":0.6}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"chat_history\"}},\"Property\":\"tool_name\"}},\"Right\":{\"Literal\":{\"Value\":\"'transfer_money'\"}}}}}]}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":2,\"Percent\":0.4}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"chat_history\"}},\"Property\":\"tool_name\"}},\"Right\":{\"Literal\":{\"Value\":\"'create_new_account'\"}}}}}]}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":2,\"Percent\":-0.25}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"chat_history\"}},\"Property\":\"tool_name\"}},\"Right\":{\"Literal\":{\"Value\":\"'get_transactions_summary'\"}}}}}]}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Token Usage by Message Type'\"}}}}}]}}}",
+          "filters": "[{\"name\":\"419721a93e0b00696c49\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"chat_history\"}},\"Property\":\"message_type\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"chat_history\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"message_type\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'ai'\"}}]]}}}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"isHiddenInViewMode\":true},{\"name\":\"1957aa9d6150cc010639\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"chat_history\"}},\"Property\":\"tool_name\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"chat_history\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"tool_name\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"null\"}}]]}}}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"isHiddenInViewMode\":false}]",
+          "height": 207.84,
+          "width": 542.58,
+          "x": 44.96,
+          "y": 485.62,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"4063afdc62c782de778c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":521.592505854801,\"y\":0,\"z\":4000,\"width\":286.77595628415304,\"height\":32.97423887587822,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Tools and Tokens Usage Tracking\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"12pt\"}}]}]}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"background\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.1}}}}}}}]}}}",
+          "filters": "[]",
+          "height": 32.97,
+          "width": 286.78,
+          "x": 521.59,
+          "y": 0.00,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"a4b9cbe923b68c0e891b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":602.5292740046839,\"y\":267.79078844652616,\"z\":1000,\"width\":636.5027322404372,\"height\":202.8415300546448,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"columnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"chat_history.message_type\",\"active\":true},{\"queryRef\":\"chat_history.tool_name\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(chat_history.total_tokens)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"chat_history\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"message_type\"},\"Name\":\"chat_history.message_type\",\"NativeReferenceName\":\"message_type\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"tool_name\"},\"Name\":\"chat_history.tool_name\",\"NativeReferenceName\":\"Tool Name\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"total_tokens\"}},\"Function\":0},\"Name\":\"Sum(chat_history.total_tokens)\",\"NativeReferenceName\":\"Total Tokens Used\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"total_tokens\"}},\"Function\":0}}}]},\"columnProperties\":{\"Sum(chat_history.total_tokens)\":{\"displayName\":\"Total Tokens Used\"},\"chat_history.tool_name\":{\"displayName\":\"Tool Name\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":9,\"Percent\":0}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"And\":{\"Left\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"chat_history\"}},\"Property\":\"message_type\"}},\"Right\":{\"Literal\":{\"Value\":\"'ai'\"}}}},\"Right\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"chat_history\"}},\"Property\":\"tool_name\"}},\"Right\":{\"Literal\":{\"Value\":\"null\"}}}}}}}]}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":7,\"Percent\":-0.25}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"And\":{\"Left\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"chat_history\"}},\"Property\":\"message_type\"}},\"Right\":{\"Literal\":{\"Value\":\"'tool_call'\"}}}},\"Right\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"chat_history\"}},\"Property\":\"tool_name\"}},\"Right\":{\"Literal\":{\"Value\":\"'get_user_accounts'\"}}}}}}}]}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":2,\"Percent\":0.6}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"And\":{\"Left\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"chat_history\"}},\"Property\":\"message_type\"}},\"Right\":{\"Literal\":{\"Value\":\"'tool_call'\"}}}},\"Right\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"chat_history\"}},\"Property\":\"tool_name\"}},\"Right\":{\"Literal\":{\"Value\":\"'search_support_documents'\"}}}}}}}]}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":7,\"Percent\":0.6}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"And\":{\"Left\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"chat_history\"}},\"Property\":\"message_type\"}},\"Right\":{\"Literal\":{\"Value\":\"'tool_call'\"}}}},\"Right\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"chat_history\"}},\"Property\":\"tool_name\"}},\"Right\":{\"Literal\":{\"Value\":\"'transfer_money'\"}}}}}}}]}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":2,\"Percent\":-0.5}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"And\":{\"Left\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"chat_history\"}},\"Property\":\"message_type\"}},\"Right\":{\"Literal\":{\"Value\":\"'tool_call'\"}}}},\"Right\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"chat_history\"}},\"Property\":\"tool_name\"}},\"Right\":{\"Literal\":{\"Value\":\"'get_transactions_summary'\"}}}}}}}]}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":2,\"Percent\":0.4}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"And\":{\"Left\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"chat_history\"}},\"Property\":\"message_type\"}},\"Right\":{\"Literal\":{\"Value\":\"'tool_call'\"}}}},\"Right\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"chat_history\"}},\"Property\":\"tool_name\"}},\"Right\":{\"Literal\":{\"Value\":\"'create_new_account'\"}}}}}}}]}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Token Usage by Message Type'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 202.84,
+          "width": 636.50,
+          "x": 602.53,
+          "y": 267.79,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"adee211f73c6808d738e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":44.96487119437939,\"y\":359.71896955503513,\"z\":6000,\"width\":532.5839188134271,\"height\":106.91647150663545,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"kpi\",\"projections\":{\"Indicator\":[{\"queryRef\":\"chat_history.trace_with_tool\",\"hidden\":true},{\"queryRef\":\"Divide(Count(chat_history.trace_id), ScopedEval(Count(chat_history.trace_id), []))\",\"hidden\":true},{\"queryRef\":\"select\"}],\"TrendLine\":[{\"queryRef\":\"UserAsks.date\"}],\"Goal\":[{\"queryRef\":\"select1\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"chat_history\",\"Type\":0},{\"Name\":\"u\",\"Entity\":\"UserAsks\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"trace_with_tool\"},\"Name\":\"chat_history.trace_with_tool\",\"NativeReferenceName\":\"trace_with_tool\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"trace_id\"}},\"Function\":2},\"Name\":\"Divide(Count(chat_history.trace_id), ScopedEval(Count(chat_history.trace_id), []))\",\"NativeReferenceName\":\"Count of trace_id1\"},{\"NativeVisualCalculation\":{\"Language\":\"dax\",\"Expression\":\"[trace_with_tool]/[Count of trace_id1]\",\"Name\":\"current percent\"},\"Name\":\"select\",\"NativeReferenceName\":\"current percent\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"u\"}},\"Property\":\"date\"},\"Name\":\"UserAsks.date\",\"NativeReferenceName\":\"date\"},{\"NativeVisualCalculation\":{\"Language\":\"dax\",\"Expression\":\"1\",\"Name\":\"Target\"},\"Name\":\"select1\",\"NativeReferenceName\":\"Target\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"trace_with_tool\"}}}]},\"autoSelectVisualType\":false,\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'% of User Questions answered by tool usage'\"}}}}}]}}}",
+          "filters": "[{\"name\":\"563e33cd010006160787\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"chat_history\"}},\"Property\":\"message_type\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"chat_history\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"message_type\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'human'\"}}],[{\"Literal\":{\"Value\":\"'tool_result'\"}}]]}}}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"isHiddenInViewMode\":false},{\"name\":\"2d711807c7537d419941\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"UserAsks\"}},\"Property\":\"date\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"u\",\"Entity\":\"UserAsks\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"u\"}},\"Property\":\"date\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"datetime'2025-10-16T00:00:00'\"}}],[{\"Literal\":{\"Value\":\"datetime'2025-10-17T00:00:00'\"}}],[{\"Literal\":{\"Value\":\"datetime'2025-10-15T00:00:00'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{}}]},\"isHiddenInViewMode\":false,\"isLockedInViewMode\":true},{\"expression\":{\"Arithmetic\":{\"Left\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"chat_history\"}},\"Property\":\"trace_with_tool\"}},\"Right\":{\"ScopedEval\":{\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"chat_history\"}},\"Property\":\"trace_with_tool\"}},\"Scope\":[]}},\"Operator\":3}},\"type\":\"Advanced\",\"howCreated\":1,\"isHiddenInViewMode\":false},{\"expression\":{\"Arithmetic\":{\"Left\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"chat_history\"}},\"Property\":\"trace_id\"}},\"Function\":2}},\"Right\":{\"ScopedEval\":{\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"chat_history\"}},\"Property\":\"trace_id\"}},\"Function\":2}},\"Scope\":[]}},\"Operator\":3}},\"type\":\"Advanced\",\"howCreated\":1,\"isHiddenInViewMode\":false}]",
+          "height": 106.92,
+          "width": 532.58,
+          "x": 44.96,
+          "y": 359.72,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"ba3223e8c2a62b6008ed\",\"layouts\":[{\"id\":0,\"position\":{\"x\":818.360655737705,\"y\":48.961748633879786,\"z\":2000,\"width\":461.6393442622951,\"height\":89.92974238875878,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"UserAsks.date\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"u\",\"Entity\":\"UserAsks\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"u\"}},\"Property\":\"date\"},\"Name\":\"UserAsks.date\",\"NativeReferenceName\":\"date\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"u\"}},\"Property\":\"date\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"data\":[{\"properties\":{\"startDate\":{\"expr\":{\"Literal\":{\"Value\":\"datetime'2025-10-15T00:00:00'\"}}},\"endDate\":{\"expr\":{\"Literal\":{\"Value\":\"datetime'2025-10-17T00:00:00'\"}}},\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Between'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"u\",\"Entity\":\"UserAsks\",\"Type\":0}],\"Where\":[{\"Condition\":{\"And\":{\"Left\":{\"Comparison\":{\"ComparisonKind\":2,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"u\"}},\"Property\":\"date\"}},\"Right\":{\"Literal\":{\"Value\":\"datetime'2025-10-15T00:00:00'\"}}}},\"Right\":{\"Comparison\":{\"ComparisonKind\":3,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"u\"}},\"Property\":\"date\"}},\"Right\":{\"Literal\":{\"Value\":\"datetime'2025-10-18T00:00:00'\"}}}}}}}]}}}}]}}}",
+          "filters": "[]",
+          "height": 89.93,
+          "width": 461.64,
+          "x": 818.36,
+          "y": 48.96,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"cc24cafa3da60d11e716\",\"layouts\":[{\"id\":0,\"position\":{\"x\":44.96487119437939,\"y\":61.951600312256055,\"z\":7000,\"width\":279.78142076502735,\"height\":39.968774395003905,\"tabOrder\":7000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Executive Summary:\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"12pt\"}}]}]}}]},\"vcObjects\":{\"background\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#E6FF00'\"}}}}}}}]}}}",
+          "filters": "[]",
+          "height": 39.97,
+          "width": 279.78,
+          "x": 44.96,
+          "y": 61.95,
+          "z": 7000.00
+        },
+        {
+          "config": "{\"name\":\"d2e32d6fdc2c7e27b707\",\"layouts\":[{\"id\":0,\"position\":{\"x\":602.5292740046839,\"y\":156.87743950039032,\"z\":3000,\"width\":636.5027322404372,\"height\":91.92818110850898,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"multiRowCard\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(chat_history.total_tokens)\"},{\"queryRef\":\"Sum(chat_history.prompt_tokens)\"},{\"queryRef\":\"Sum(chat_history.completion_tokens)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"chat_history\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"prompt_tokens\"}},\"Function\":0},\"Name\":\"Sum(chat_history.prompt_tokens)\",\"NativeReferenceName\":\"Total Prompt Tokens\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"completion_tokens\"}},\"Function\":0},\"Name\":\"Sum(chat_history.completion_tokens)\",\"NativeReferenceName\":\"Total Completion Tokens\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"total_tokens\"}},\"Function\":0},\"Name\":\"Sum(chat_history.total_tokens)\",\"NativeReferenceName\":\"Total Tokens Used\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"total_tokens\"}},\"Function\":0}}}]},\"columnProperties\":{\"Sum(chat_history.prompt_tokens)\":{\"displayName\":\"Total Prompt Tokens\"},\"Sum(chat_history.completion_tokens)\":{\"displayName\":\"Total Completion Tokens\"},\"Sum(chat_history.total_tokens)\":{\"displayName\":\"Total Tokens Used\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"card\":[{\"properties\":{\"outlineStyle\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Token Usage Breakdown'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 91.93,
+          "width": 636.50,
+          "x": 602.53,
+          "y": 156.88,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"fbf7049d24bd21829a2b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":35.97189695550352,\"y\":110.91334894613584,\"z\":8000,\"width\":541.5768930523029,\"height\":236.81498829039813,\"tabOrder\":8000}}],\"singleVisual\":{\"visualType\":\"aiNarratives\",\"drillFilterOtherVisuals\":true,\"objects\":{\"narrativeSelection\":[{\"properties\":{\"dismissSelectionScreen\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"userPrompt\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Provide an executive summary, indicating important takeaways.'\"}}},\"selectedVisualsJson\":{\"expr\":{\"Literal\":{\"Value\":\"'{\\\"isEntireReportSelected\\\":false,\\\"sections\\\":{\\\"1a8c2b8de28b91b5be50\\\":{\\\"isEntireSectionSelected\\\":true}}}'\"}}},\"useAllVisuals\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 236.81,
+          "width": 541.58,
+          "x": 35.97,
+          "y": 110.91,
+          "z": 8000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Content Sensitivity",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "85639d3d09ddad423eca",
+      "ordinal": 2,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"21bb03cfdd573ba82e4b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":431.6627634660422,\"y\":266.79156908665107,\"z\":5000,\"width\":289.77361436377834,\"height\":279.78142076502735,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"projections\":{\"Y\":[{\"queryRef\":\"CountNonNull(ContentIssues.trace_id)\"}],\"Category\":[{\"queryRef\":\"ContentIssues.jailbreak_filtered\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"ContentIssues\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"trace_id\"}},\"Function\":5},\"Name\":\"CountNonNull(ContentIssues.trace_id)\",\"NativeReferenceName\":\"Count of trace_id\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"jailbreak_filtered\"},\"Name\":\"ContentIssues.jailbreak_filtered\",\"NativeReferenceName\":\"Detected?\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"trace_id\"}},\"Function\":5}}}]},\"columnProperties\":{\"ContentIssues.jailbreak_filtered\":{\"displayName\":\"Detected?\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#07A04F'\"}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"ContentIssues\"}},\"Property\":\"jailbreak_filtered\"}},\"Right\":{\"Literal\":{\"Value\":\"'false'\"}}}}}]}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Jail break'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 279.78,
+          "width": 289.77,
+          "x": 431.66,
+          "y": 266.79,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"76e5cc5c4b7dcee5e008\",\"layouts\":[{\"id\":0,\"position\":{\"x\":13.989071038251367,\"y\":173.86416861826697,\"z\":7000,\"width\":382.7010148321624,\"height\":526.5886026541765,\"tabOrder\":7000}}],\"singleVisual\":{\"visualType\":\"aiNarratives\",\"drillFilterOtherVisuals\":true,\"objects\":{\"narrativeSelection\":[{\"properties\":{\"dismissSelectionScreen\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"userPrompt\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Summarize the data. Use a bulleted list to highlight key insights. Based on the data, what questions are likely to be asked by leadership? Answer these questions.'\"}}},\"selectedVisualsJson\":{\"expr\":{\"Literal\":{\"Value\":\"'{\\\"isEntireReportSelected\\\":false,\\\"sections\\\":{\\\"85639d3d09ddad423eca\\\":{\\\"isEntireSectionSelected\\\":true}}}'\"}}},\"useAllVisuals\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 526.59,
+          "width": 382.70,
+          "x": 13.99,
+          "y": 173.86,
+          "z": 7000.00
+        },
+        {
+          "config": "{\"name\":\"8b44befb50b0a26644d4\",\"layouts\":[{\"id\":0,\"position\":{\"x\":521.592505854801,\"y\":0,\"z\":6000,\"width\":286.77595628415304,\"height\":32.97423887587822,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Content Sensitivity Monitoring\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"12pt\"}}]}]}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"background\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.1}}}}}}}]}}}",
+          "filters": "[]",
+          "height": 32.97,
+          "width": 286.78,
+          "x": 521.59,
+          "y": 0.00,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"a8b209983756b0769085\",\"layouts\":[{\"id\":0,\"position\":{\"x\":822.3575331772054,\"y\":35.97189695550352,\"z\":0,\"width\":457.6424668227947,\"height\":95.92505854800937,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"UserAsks.date\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"u\",\"Entity\":\"UserAsks\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"u\"}},\"Property\":\"date\"},\"Name\":\"UserAsks.date\",\"NativeReferenceName\":\"Date\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"u\"}},\"Property\":\"date\"}}}]},\"columnProperties\":{\"UserAsks.date\":{\"displayName\":\"Date\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Between'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 95.93,
+          "width": 457.64,
+          "x": 822.36,
+          "y": 35.97,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"d3d3c5c2c3d095a8c578\",\"layouts\":[{\"id\":0,\"position\":{\"x\":21.982825917252146,\"y\":119.90632318501171,\"z\":8000,\"width\":279.78142076502735,\"height\":39.968774395003905,\"tabOrder\":8000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Executive Summary:\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"12pt\"}}]}]}}]},\"vcObjects\":{\"background\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#E6FF00'\"}}}}}}}]}}}",
+          "filters": "[]",
+          "height": 39.97,
+          "width": 279.78,
+          "x": 21.98,
+          "y": 119.91,
+          "z": 8000.00
+        },
+        {
+          "config": "{\"name\":\"d6ef70dd5c687c3be608\",\"layouts\":[{\"id\":0,\"position\":{\"x\":707.4473067915691,\"y\":139.89071038251367,\"z\":2000,\"width\":275.78454332552695,\"height\":279.78142076502735,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"projections\":{\"Y\":[{\"queryRef\":\"CountNonNull(ContentIssues.trace_id)\"}],\"Category\":[{\"queryRef\":\"ContentIssues.sexual_severity\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"ContentIssues\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"trace_id\"}},\"Function\":5},\"Name\":\"CountNonNull(ContentIssues.trace_id)\",\"NativeReferenceName\":\"Count of trace_id\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"sexual_severity\"},\"Name\":\"ContentIssues.sexual_severity\",\"NativeReferenceName\":\"Severity\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"trace_id\"}},\"Function\":5}}}]},\"columnProperties\":{\"ContentIssues.sexual_severity\":{\"displayName\":\"Severity\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#07A04F'\"}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"ContentIssues\"}},\"Property\":\"sexual_severity\"}},\"Right\":{\"Literal\":{\"Value\":\"'safe'\"}}}}}]}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Inappropriate'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 279.78,
+          "width": 275.78,
+          "x": 707.45,
+          "y": 139.89,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"e21a17877b87a8300d8c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":997.2209211553475,\"y\":440.65573770491807,\"z\":3000,\"width\":282.77907884465264,\"height\":279.78142076502735,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"projections\":{\"Y\":[{\"queryRef\":\"CountNonNull(ContentIssues.trace_id)\"}],\"Category\":[{\"queryRef\":\"ContentIssues.self_harm_severity\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"ContentIssues\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"trace_id\"}},\"Function\":5},\"Name\":\"CountNonNull(ContentIssues.trace_id)\",\"NativeReferenceName\":\"Count of trace_id\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"self_harm_severity\"},\"Name\":\"ContentIssues.self_harm_severity\",\"NativeReferenceName\":\"Severity\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"trace_id\"}},\"Function\":5}}}]},\"columnProperties\":{\"ContentIssues.self_harm_severity\":{\"displayName\":\"Severity\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#07A04F'\"}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"ContentIssues\"}},\"Property\":\"self_harm_severity\"}},\"Right\":{\"Literal\":{\"Value\":\"'safe'\"}}}}}]}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Self Harm'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 279.78,
+          "width": 282.78,
+          "x": 997.22,
+          "y": 440.66,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"f06ea98fbee3a08c0351\",\"layouts\":[{\"id\":0,\"position\":{\"x\":997.2209211553475,\"y\":139.89071038251367,\"z\":4000,\"width\":280.78064012490245,\"height\":279.78142076502735,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"projections\":{\"Y\":[{\"queryRef\":\"CountNonNull(ContentIssues.trace_id)\"}],\"Category\":[{\"queryRef\":\"ContentIssues.hate_severity\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"ContentIssues\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"trace_id\"}},\"Function\":5},\"Name\":\"CountNonNull(ContentIssues.trace_id)\",\"NativeReferenceName\":\"Count of trace_id\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"hate_severity\"},\"Name\":\"ContentIssues.hate_severity\",\"NativeReferenceName\":\"Severity\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"trace_id\"}},\"Function\":5}}}]},\"columnProperties\":{\"ContentIssues.hate_severity\":{\"displayName\":\"Severity\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#07A04F'\"}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"ContentIssues\"}},\"Property\":\"hate_severity\"}},\"Right\":{\"Literal\":{\"Value\":\"'safe'\"}}}}}]}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Hateful'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 279.78,
+          "width": 280.78,
+          "x": 997.22,
+          "y": 139.89,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"faad28f38033097933e9\",\"layouts\":[{\"id\":0,\"position\":{\"x\":721.4363778298205,\"y\":440.65573770491807,\"z\":1000,\"width\":287.77517564402814,\"height\":279.78142076502735,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"projections\":{\"Y\":[{\"queryRef\":\"CountNonNull(ContentIssues.trace_id)\"}],\"Category\":[{\"queryRef\":\"ContentIssues.violence_severity\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"ContentIssues\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"trace_id\"}},\"Function\":5},\"Name\":\"CountNonNull(ContentIssues.trace_id)\",\"NativeReferenceName\":\"Violence\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"violence_severity\"},\"Name\":\"ContentIssues.violence_severity\",\"NativeReferenceName\":\"Severity\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"trace_id\"}},\"Function\":5}}}]},\"columnProperties\":{\"ContentIssues.violence_severity\":{\"displayName\":\"Severity\"},\"CountNonNull(ContentIssues.trace_id)\":{\"displayName\":\"Violence\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#07A04F'\"}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"ContentIssues\"}},\"Property\":\"violence_severity\"}},\"Right\":{\"Literal\":{\"Value\":\"'safe'\"}}}}}]}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Violence'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 279.78,
+          "width": 287.78,
+          "x": 721.44,
+          "y": 440.66,
+          "z": 1000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Tool Health",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "98d2211f76362d11a58a",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"10e95345406bc3cde01d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":669.4769711163154,\"y\":343.7314597970336,\"z\":2000,\"width\":288.77439500390324,\"height\":185.85480093676816,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"projections\":{\"Category\":[{\"queryRef\":\"tool_usage.status\",\"active\":true}],\"Series\":[{\"queryRef\":\"tool_usage.tool_name\"}],\"Y\":[{\"queryRef\":\"CountNonNull(chat_history.tool_call_id)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"tool_usage\",\"Type\":0},{\"Name\":\"c\",\"Entity\":\"chat_history\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"status\"},\"Name\":\"tool_usage.status\",\"NativeReferenceName\":\"status\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"tool_name\"},\"Name\":\"tool_usage.tool_name\",\"NativeReferenceName\":\"tool_name\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"tool_call_id\"}},\"Function\":2},\"Name\":\"CountNonNull(chat_history.tool_call_id)\",\"NativeReferenceName\":\"Count of tool_call_id\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"tool_call_id\"}},\"Function\":2}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#07A04F'\"}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"tool_usage\"}},\"Property\":\"status\"}},\"Right\":{\"Literal\":{\"Value\":\"'Healthy'\"}}}}}]}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Get Transaction Summary'\"}}},\"heading\":{\"expr\":{\"Literal\":{\"Value\":\"'Heading2'\"}}}}}]}}}",
+          "filters": "[{\"name\":\"1efebfa320dc560dc899\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"tool_usage\"}},\"Property\":\"tool_name\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"tool_usage\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"tool_name\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'get_transactions_summary'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{},\"isHiddenInViewMode\":false,\"isLockedInViewMode\":true}]",
+          "height": 185.85,
+          "width": 288.77,
+          "x": 669.48,
+          "y": 343.73,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"16a0e79a920740b9cc96\",\"layouts\":[{\"id\":0,\"position\":{\"x\":953.2552693208431,\"y\":343.7314597970336,\"z\":7000,\"width\":298.76658860265417,\"height\":185.85480093676816,\"tabOrder\":7000}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"projections\":{\"Category\":[{\"queryRef\":\"tool_usage.status\",\"active\":true}],\"Y\":[{\"queryRef\":\"CountNonNull(chat_history.tool_call_id)\"}],\"Series\":[{\"queryRef\":\"tool_usage.tool_name\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"tool_usage\",\"Type\":0},{\"Name\":\"c\",\"Entity\":\"chat_history\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"status\"},\"Name\":\"tool_usage.status\",\"NativeReferenceName\":\"status\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"tool_name\"},\"Name\":\"tool_usage.tool_name\",\"NativeReferenceName\":\"tool_name\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"tool_call_id\"}},\"Function\":2},\"Name\":\"CountNonNull(chat_history.tool_call_id)\",\"NativeReferenceName\":\"Count of tool_call_id\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"tool_call_id\"}},\"Function\":2}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#07A04F'\"}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"tool_usage\"}},\"Property\":\"status\"}},\"Right\":{\"Literal\":{\"Value\":\"'Healthy'\"}}}}}]}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Search Support Documents'\"}}},\"heading\":{\"expr\":{\"Literal\":{\"Value\":\"'Heading2'\"}}}}}]}}}",
+          "filters": "[{\"name\":\"1efebfa320dc560dc899\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"tool_usage\"}},\"Property\":\"tool_name\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"tool_usage\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"tool_name\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'search_support_documents'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{},\"isHiddenInViewMode\":false,\"isLockedInViewMode\":true}]",
+          "height": 185.85,
+          "width": 298.77,
+          "x": 953.26,
+          "y": 343.73,
+          "z": 7000.00
+        },
+        {
+          "config": "{\"name\":\"2daa552223ee10e59168\",\"layouts\":[{\"id\":0,\"position\":{\"x\":521.592505854801,\"y\":0,\"z\":6000,\"width\":286.77595628415304,\"height\":32.97423887587822,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Tools and Tokens Usage Tracking\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"12pt\"}}]}]}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"background\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.1}}}}}}}]}}}",
+          "filters": "[]",
+          "height": 32.97,
+          "width": 286.78,
+          "x": 521.59,
+          "y": 0.00,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"427e952a671500ecba41\",\"layouts\":[{\"id\":0,\"position\":{\"x\":29.97658079625293,\"y\":89.92974238875878,\"z\":9000,\"width\":553.5675253708041,\"height\":214.832162373146,\"tabOrder\":9000}}],\"singleVisual\":{\"visualType\":\"aiNarratives\",\"drillFilterOtherVisuals\":true,\"objects\":{\"narrativeSelection\":[{\"properties\":{\"dismissSelectionScreen\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 214.83,
+          "width": 553.57,
+          "x": 29.98,
+          "y": 89.93,
+          "z": 9000.00
+        },
+        {
+          "config": "{\"name\":\"6d9ae160d215868c4c0a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":817.3614363778298,\"y\":44.96487119437939,\"z\":8000,\"width\":462.6385636221702,\"height\":88.93052302888368,\"tabOrder\":8000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"chat_history.trace_end\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"chat_history\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"trace_end\"},\"Name\":\"chat_history.trace_end\",\"NativeReferenceName\":\"trace_end\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"trace_end\"}}}]},\"columnProperties\":{\"chat_history.trace_end\":{\"displayName\":\"Date\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"data\":[{\"properties\":{\"endDate\":{\"expr\":{\"Literal\":{\"Value\":\"datetime'2025-10-16T15:47:01.840'\"}}},\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Between'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"chat_history\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Comparison\":{\"ComparisonKind\":3,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"trace_end\"}},\"Right\":{\"Literal\":{\"Value\":\"datetime'2025-10-17T00:00:00'\"}}}}}]}}}}],\"selection\":[{\"properties\":{\"singleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[{\"name\":\"2f43e730e587e00d2aed\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"tool_usage\"}},\"Property\":\"tool_call_id\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"tool_usage\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"tool_call_id\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"null\"}}]]}}}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"isHiddenInViewMode\":false}]",
+          "height": 88.93,
+          "width": 462.64,
+          "x": 817.36,
+          "y": 44.96,
+          "z": 8000.00
+        },
+        {
+          "config": "{\"name\":\"7100254f0124d063e57c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":669.4769711163154,\"y\":529.5862607338017,\"z\":3000,\"width\":294.7697111631538,\"height\":190.85089773614365,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"projections\":{\"Category\":[{\"queryRef\":\"tool_usage.status\",\"active\":true}],\"Series\":[{\"queryRef\":\"tool_usage.tool_name\"}],\"Y\":[{\"queryRef\":\"CountNonNull(chat_history.tool_call_id)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"tool_usage\",\"Type\":0},{\"Name\":\"c\",\"Entity\":\"chat_history\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"status\"},\"Name\":\"tool_usage.status\",\"NativeReferenceName\":\"status\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"tool_name\"},\"Name\":\"tool_usage.tool_name\",\"NativeReferenceName\":\"tool_name\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"tool_call_id\"}},\"Function\":2},\"Name\":\"CountNonNull(chat_history.tool_call_id)\",\"NativeReferenceName\":\"Count of tool_call_id\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"tool_call_id\"}},\"Function\":2}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#07A04F'\"}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"tool_usage\"}},\"Property\":\"status\"}},\"Right\":{\"Literal\":{\"Value\":\"'Healthy'\"}}}}}]}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Get User Accounts'\"}}},\"heading\":{\"expr\":{\"Literal\":{\"Value\":\"'Heading2'\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'left'\"}}}}}]}}}",
+          "filters": "[{\"name\":\"1efebfa320dc560dc899\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"tool_usage\"}},\"Property\":\"tool_name\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"tool_usage\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"tool_name\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'get_user_accounts'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{},\"isHiddenInViewMode\":false,\"isLockedInViewMode\":true}]",
+          "height": 190.85,
+          "width": 294.77,
+          "x": 669.48,
+          "y": 529.59,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"89294a4a9b546bc0ec10\",\"layouts\":[{\"id\":0,\"position\":{\"x\":29.97658079625293,\"y\":44.96487119437939,\"z\":10000,\"width\":279.78142076502735,\"height\":39.968774395003905,\"tabOrder\":10000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Executive Summary:\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"12pt\"}}]}]}}]},\"vcObjects\":{\"background\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#E6FF00'\"}}}}}}}]}}}",
+          "filters": "[]",
+          "height": 39.97,
+          "width": 279.78,
+          "x": 29.98,
+          "y": 44.96,
+          "z": 10000.00
+        },
+        {
+          "config": "{\"name\":\"cd1d981faee55c216792\",\"layouts\":[{\"id\":0,\"position\":{\"x\":29.97658079625293,\"y\":321.74863387978144,\"z\":0,\"width\":553.5675253708041,\"height\":121.90476190476191,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"chat_history.tool_name\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"chat_history\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"tool_name\"},\"Name\":\"chat_history.tool_name\",\"NativeReferenceName\":\"Tool Name\"}]},\"columnProperties\":{\"chat_history.tool_name\":{\"displayName\":\"Tool Name\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{\"orientation\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}],\"items\":[{\"properties\":{\"background\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.1}}}}}}}]}}}",
+          "filters": "[{\"name\":\"ed6a9bb6de0e13d835d5\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"chat_history\"}},\"Property\":\"tool_name\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"chat_history\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"tool_name\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"null\"}}]]}}}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"isHiddenInViewMode\":true,\"isLockedInViewMode\":true}]",
+          "height": 121.90,
+          "width": 553.57,
+          "x": 29.98,
+          "y": 321.75,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"d51381f132bd507acd57\",\"layouts\":[{\"id\":0,\"position\":{\"x\":29.97658079625293,\"y\":470.63231850117097,\"z\":1000,\"width\":553.5675253708041,\"height\":233.81733021077284,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"columnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"tool_usage.tool_message\",\"active\":true}],\"Series\":[{\"queryRef\":\"tool_usage.tool_name\"}],\"Y\":[{\"queryRef\":\"CountNonNull(chat_history.tool_call_id)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"tool_usage\",\"Type\":0},{\"Name\":\"c\",\"Entity\":\"chat_history\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"tool_message\"},\"Name\":\"tool_usage.tool_message\",\"NativeReferenceName\":\"Error Message\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"tool_name\"},\"Name\":\"tool_usage.tool_name\",\"NativeReferenceName\":\"Tool\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"tool_call_id\"}},\"Function\":2},\"Name\":\"CountNonNull(chat_history.tool_call_id)\",\"NativeReferenceName\":\"Count of tool_call_id\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"tool_call_id\"}},\"Function\":2}}}]},\"columnProperties\":{\"tool_usage.tool_message\":{\"displayName\":\"Error Message\"},\"tool_usage.tool_name\":{\"displayName\":\"Tool\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":9,\"Percent\":0}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"tool_usage\"}},\"Property\":\"tool_name\"}},\"Right\":{\"Literal\":{\"Value\":\"'transfer_money'\"}}}}}]}}]}}}",
+          "filters": "[{\"name\":\"e4945ef41bc14e064350\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"tool_usage\"}},\"Property\":\"status\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"tool_usage\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"status\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Healthy'\"}}],[{\"Literal\":{\"Value\":\"null\"}}]]}}}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"isLockedInViewMode\":true}]",
+          "height": 233.82,
+          "width": 553.57,
+          "x": 29.98,
+          "y": 470.63,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"d70771b80193a5e2ac83\",\"layouts\":[{\"id\":0,\"position\":{\"x\":950.2576112412179,\"y\":147.88446526151444,\"z\":4000,\"width\":305.76112412177986,\"height\":186.85402029664326,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"projections\":{\"Category\":[{\"queryRef\":\"tool_usage.status\",\"active\":true}],\"Y\":[{\"queryRef\":\"CountNonNull(chat_history.tool_call_id)\"}],\"Series\":[{\"queryRef\":\"tool_usage.tool_name\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"tool_usage\",\"Type\":0},{\"Name\":\"c\",\"Entity\":\"chat_history\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"status\"},\"Name\":\"tool_usage.status\",\"NativeReferenceName\":\"status\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"tool_name\"},\"Name\":\"tool_usage.tool_name\",\"NativeReferenceName\":\"tool_name\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"tool_call_id\"}},\"Function\":2},\"Name\":\"CountNonNull(chat_history.tool_call_id)\",\"NativeReferenceName\":\"Count of tool_call_id\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"tool_call_id\"}},\"Function\":2}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#07A04F'\"}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"tool_usage\"}},\"Property\":\"status\"}},\"Right\":{\"Literal\":{\"Value\":\"'Healthy'\"}}}}}]}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Create New Account'\"}}},\"heading\":{\"expr\":{\"Literal\":{\"Value\":\"'Heading2'\"}}}}}]}}}",
+          "filters": "[{\"name\":\"1efebfa320dc560dc899\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"tool_usage\"}},\"Property\":\"tool_name\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"tool_usage\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"tool_name\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'create_new_account'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{},\"isHiddenInViewMode\":false,\"isLockedInViewMode\":true}]",
+          "height": 186.85,
+          "width": 305.76,
+          "x": 950.26,
+          "y": 147.88,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"fc0ea7a6daacc5e79d0e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":958.2513661202187,\"y\":529.5862607338017,\"z\":5000,\"width\":315.75331772053084,\"height\":190.85089773614365,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"projections\":{\"Category\":[{\"queryRef\":\"tool_usage.status\",\"active\":true}],\"Y\":[{\"queryRef\":\"CountNonNull(chat_history.tool_call_id)\"}],\"Series\":[{\"queryRef\":\"tool_usage.tool_name\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"tool_usage\",\"Type\":0},{\"Name\":\"c\",\"Entity\":\"chat_history\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"status\"},\"Name\":\"tool_usage.status\",\"NativeReferenceName\":\"status\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"tool_name\"},\"Name\":\"tool_usage.tool_name\",\"NativeReferenceName\":\"tool_name\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"tool_call_id\"}},\"Function\":2},\"Name\":\"CountNonNull(chat_history.tool_call_id)\",\"NativeReferenceName\":\"Count of tool_call_id\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"tool_call_id\"}},\"Function\":2}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":9,\"Percent\":0}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"tool_usage\"}},\"Property\":\"status\"}},\"Right\":{\"Literal\":{\"Value\":\"'Errored'\"}}}}}]}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#07A04F'\"}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"tool_usage\"}},\"Property\":\"status\"}},\"Right\":{\"Literal\":{\"Value\":\"'Healthy'\"}}}}}]}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Transfer Money'\"}}},\"heading\":{\"expr\":{\"Literal\":{\"Value\":\"'Heading2'\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'left'\"}}}}}]}}}",
+          "filters": "[{\"name\":\"1efebfa320dc560dc899\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"tool_usage\"}},\"Property\":\"tool_name\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"tool_usage\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"tool_name\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'transfer_money'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{},\"isHiddenInViewMode\":false,\"isLockedInViewMode\":true}]",
+          "height": 190.85,
+          "width": 315.75,
+          "x": 958.25,
+          "y": 529.59,
+          "z": 5000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Session Insights",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "fe8abb6a847889d5808b",
+      "ordinal": 3,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"1fd5205bde27ba9eadbe\",\"layouts\":[{\"id\":0,\"position\":{\"x\":28.97736143637783,\"y\":477.62685402029666,\"z\":2000,\"width\":616.5183450429353,\"height\":242.81030444964873,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Y\":[{\"queryRef\":\"CountNonNull(chat_history.trace_id)\",\"hidden\":true},{\"queryRef\":\"Count(chat_history.session_id)\",\"hidden\":true},{\"queryRef\":\"select\"}],\"Category\":[{\"queryRef\":\"UserAsks.date\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"chat_history\",\"Type\":0},{\"Name\":\"u\",\"Entity\":\"UserAsks\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"trace_id\"}},\"Function\":2},\"Name\":\"CountNonNull(chat_history.trace_id)\",\"NativeReferenceName\":\"Count of trace_id\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"session_id\"}},\"Function\":2},\"Name\":\"Count(chat_history.session_id)\",\"NativeReferenceName\":\"Count of session_id\"},{\"NativeVisualCalculation\":{\"Language\":\"dax\",\"Expression\":\"[Count of trace_id]/[Count of session_id]\",\"Name\":\"Average Questions per Session\"},\"Name\":\"select\",\"NativeReferenceName\":\"Average Questions per Session\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"u\"}},\"Property\":\"date\"},\"Name\":\"UserAsks.date\",\"NativeReferenceName\":\"Date\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"u\"}},\"Property\":\"date\"}}}]},\"columnProperties\":{\"UserAsks.date\":{\"displayName\":\"Date\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"categoryAxis\":[{\"properties\":{\"axisType\":{\"expr\":{\"Literal\":{\"Value\":\"'Categorical'\"}}}}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":4,\"Percent\":-0.25}}}}}},\"selector\":{\"metadata\":\"select\"}}]}}}",
+          "filters": "[{\"name\":\"7e6ec6171b677660aea0\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"UserAsks\"}},\"Property\":\"date\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"u\",\"Entity\":\"UserAsks\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"u\"}},\"Property\":\"date\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"null\"}}]]}}}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"isHiddenInViewMode\":false,\"isLockedInViewMode\":true}]",
+          "height": 242.81,
+          "width": 616.52,
+          "x": 28.98,
+          "y": 477.63,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"7be8008bb4e007b6a59d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":28.97736143637783,\"y\":152.88056206088993,\"z\":5000,\"width\":559.5628415300547,\"height\":313.75487900078065,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"aiNarratives\",\"drillFilterOtherVisuals\":true,\"objects\":{\"narrativeSelection\":[{\"properties\":{\"dismissSelectionScreen\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"userPrompt\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Summarize the data. Based on the data, what questions are likely to be asked by leadership? Answer these questions.'\"}}},\"selectedVisualsJson\":{\"expr\":{\"Literal\":{\"Value\":\"'{\\\"isEntireReportSelected\\\":false,\\\"sections\\\":{\\\"fe8abb6a847889d5808b\\\":{\\\"isEntireSectionSelected\\\":true}}}'\"}}},\"useAllVisuals\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 313.75,
+          "width": 559.56,
+          "x": 28.98,
+          "y": 152.88,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"8cb9887d4d2c96022738\",\"layouts\":[{\"id\":0,\"position\":{\"x\":28.97736143637783,\"y\":110.91334894613584,\"z\":6000,\"width\":279.78142076502735,\"height\":39.968774395003905,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Executive Summary:\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"12pt\"}}]}]}}]},\"vcObjects\":{\"background\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#E6FF00'\"}}}}}}}]}}}",
+          "filters": "[]",
+          "height": 39.97,
+          "width": 279.78,
+          "x": 28.98,
+          "y": 110.91,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"9f75cd62072d85874d40\",\"layouts\":[{\"id\":0,\"position\":{\"x\":496.61202185792354,\"y\":0,\"z\":3000,\"width\":286.77595628415304,\"height\":32.97423887587822,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Session Insights\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"12pt\"}}],\"horizontalTextAlignment\":\"center\"}]}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"background\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.1}}}}}}}]}}}",
+          "filters": "[]",
+          "height": 32.97,
+          "width": 286.78,
+          "x": 496.61,
+          "y": 0.00,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"d4052c40b2a1975a21a7\",\"layouts\":[{\"id\":0,\"position\":{\"x\":688.4621389539423,\"y\":477.62685402029666,\"z\":1000,\"width\":580.5464480874317,\"height\":242.81030444964873,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Sum(chat_history.response_time_ms)\",\"hidden\":true},{\"queryRef\":\"select\"}],\"Category\":[{\"queryRef\":\"UserAsks.date\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"chat_history\",\"Type\":0},{\"Name\":\"u\",\"Entity\":\"UserAsks\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"response_time_ms\"}},\"Function\":1},\"Name\":\"Sum(chat_history.response_time_ms)\",\"NativeReferenceName\":\"Average of response_time_ms\"},{\"NativeVisualCalculation\":{\"Language\":\"dax\",\"Expression\":\"[Average of response_time_ms]/1000\",\"Name\":\"Average Response Time (Sec)\"},\"Name\":\"select\",\"NativeReferenceName\":\"Average Response Time (Sec)\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"u\"}},\"Property\":\"date\"},\"Name\":\"UserAsks.date\",\"NativeReferenceName\":\"Date\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"u\"}},\"Property\":\"date\"}}}]},\"columnProperties\":{\"UserAsks.date\":{\"displayName\":\"Date\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"categoryAxis\":[{\"properties\":{\"axisType\":{\"expr\":{\"Literal\":{\"Value\":\"'Categorical'\"}}}}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":5,\"Percent\":-0.5}}}}}},\"selector\":{\"metadata\":\"select\"}}]}}}",
+          "filters": "[]",
+          "height": 242.81,
+          "width": 580.55,
+          "x": 688.46,
+          "y": 477.63,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"f37a8837a0d9cacdd81c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":688.4621389539423,\"y\":194.84777517564405,\"z\":0,\"width\":559.5628415300547,\"height\":229.82045277127244,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"session_duration_date.date\",\"active\":true}],\"Y\":[{\"queryRef\":\"Avg(session_duration_date.sess_duration)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"session_duration_date\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"date\"},\"Name\":\"session_duration_date.date\",\"NativeReferenceName\":\"Date\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"sess_duration\"}},\"Function\":1},\"Name\":\"Avg(session_duration_date.sess_duration)\",\"NativeReferenceName\":\"Average Session Duration (Sec)\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"date\"}}}]},\"columnProperties\":{\"Avg(session_duration_date.sess_duration)\":{\"displayName\":\"Average Session Duration (Sec)\"},\"session_duration_date.date\":{\"displayName\":\"Date\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":9,\"Percent\":-0.25}}}}}},\"selector\":{\"metadata\":\"Avg(session_duration_date.sess_duration)\"}}],\"categoryAxis\":[{\"properties\":{\"axisType\":{\"expr\":{\"Literal\":{\"Value\":\"'Categorical'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 229.82,
+          "width": 559.56,
+          "x": 688.46,
+          "y": 194.85,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"fba48f3b4198e2762048\",\"layouts\":[{\"id\":0,\"position\":{\"x\":811.3661202185792,\"y\":22.982045277127245,\"z\":4000,\"width\":468.6338797814208,\"height\":107.91569086651054,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"UserAsks.date\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"u\",\"Entity\":\"UserAsks\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"u\"}},\"Property\":\"date\"},\"Name\":\"UserAsks.date\",\"NativeReferenceName\":\"Date\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"u\"}},\"Property\":\"date\"}}}]},\"columnProperties\":{\"UserAsks.date\":{\"displayName\":\"Date\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Between'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 107.92,
+          "width": 468.63,
+          "x": 811.37,
+          "y": 22.98,
+          "z": 4000.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

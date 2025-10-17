@@ -1,11 +1,11 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
-    "type": "SQLDatabase",
-    "displayName": "agentic_ops_db"
+    "type": "Report",
+    "displayName": "Agent_Insights"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "afdf1e64-1e2f-89bf-43e2-b46926ad75df"
+    "logicalId": "fd5b80e0-e410-af4f-4da8-ac09d9ea441a"
   }
 }

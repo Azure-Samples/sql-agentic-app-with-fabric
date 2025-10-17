@@ -1,0 +1,72 @@
+table chat_sessions
+	lineageTag: 00977eb2-638e-408e-b7ba-6db683884f10
+	sourceLineageTag: [dbo].[chat_sessions]
+
+	measure high_value_tasks = DISTINCTCOUNT(tool_usage[trace_id])/DISTINCTCOUNT(chat_history[trace_id])
+		lineageTag: 9c9f52eb-d346-4e0c-ac36-88942a8160be
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column session_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: e4e7179a-5e9a-4d73-a4f9-bb94e34ac27a
+		sourceLineageTag: session_id
+		summarizeBy: none
+		sourceColumn: session_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column user_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 528488d6-4c67-455d-b035-02a3a97ebace
+		sourceLineageTag: user_id
+		summarizeBy: none
+		sourceColumn: user_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column title
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: f1ad6da5-ef04-4705-a59f-c622c652c024
+		sourceLineageTag: title
+		summarizeBy: none
+		sourceColumn: title
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_at
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 6dd82fc6-a5d7-4bbe-ae45-a8b94f427378
+		sourceLineageTag: created_at
+		summarizeBy: none
+		sourceColumn: created_at
+
+		annotation SummarizationSetBy = Automatic
+
+	column updated_at
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: afedf7da-f9c7-4680-90c4-a08ba61c1b1f
+		sourceLineageTag: updated_at
+		summarizeBy: none
+		sourceColumn: updated_at
+
+		annotation SummarizationSetBy = Automatic
+
+	partition chat_sessions = entity
+		mode: directLake
+		source
+			entityName: chat_sessions
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

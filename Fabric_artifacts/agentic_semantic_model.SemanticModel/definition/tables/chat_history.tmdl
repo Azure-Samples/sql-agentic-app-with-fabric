@@ -1,0 +1,224 @@
+table chat_history
+	lineageTag: 0ffab876-d0b5-49ce-aa90-774cb47e1dff
+	sourceLineageTag: [dbo].[chat_history]
+
+	measure trace_with_tool = CALCULATE(DISTINCTCOUNT(chat_history[trace_id]), chat_history[message_type] = "tool_call")
+		formatString: 0
+		lineageTag: 663dab2a-32de-4897-8366-7d6b8ac95877
+
+		changedProperty = Name
+
+	column tool_output
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 7e5ef221-99e2-491b-a578-632d755dec45
+		sourceLineageTag: tool_output
+		summarizeBy: none
+		sourceColumn: tool_output
+
+		annotation SummarizationSetBy = Automatic
+
+	column tool_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 31022de7-f66d-408a-88bd-f885630fdad8
+		sourceLineageTag: tool_id
+		summarizeBy: none
+		sourceColumn: tool_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column finish_reason
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: bd3d9eab-3dda-437c-b8f0-e75177eb45a7
+		sourceLineageTag: finish_reason
+		summarizeBy: none
+		sourceColumn: finish_reason
+
+		annotation SummarizationSetBy = Automatic
+
+	column response_time_ms
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 184fc87b-57d8-44c9-acfd-3e9caa1041eb
+		sourceLineageTag: response_time_ms
+		summarizeBy: sum
+		sourceColumn: response_time_ms
+
+		annotation SummarizationSetBy = Automatic
+
+	column trace_end
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 94914c3b-151b-402b-93b1-0f677def435e
+		sourceLineageTag: trace_end
+		summarizeBy: none
+		sourceColumn: trace_end
+
+		annotation SummarizationSetBy = Automatic
+
+	column tool_call_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 5a1e9467-ce76-4d99-83a9-bb5a2fe8e347
+		sourceLineageTag: tool_call_id
+		summarizeBy: none
+		sourceColumn: tool_call_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tool_name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: fa928e5d-fbb5-4a04-b45b-b643d2b9ce96
+		sourceLineageTag: tool_name
+		summarizeBy: none
+		sourceColumn: tool_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column tool_input
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 915bc1ae-9ab0-4855-a20f-f02b9a9eb001
+		sourceLineageTag: tool_input
+		summarizeBy: none
+		sourceColumn: tool_input
+
+		annotation SummarizationSetBy = Automatic
+
+	column content
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 5cbcfd36-47a6-4ac0-a17b-b2e8b808cf5e
+		sourceLineageTag: content
+		summarizeBy: none
+		sourceColumn: content
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 2ec8ed2b-d83c-4576-9151-8626c405d01c
+		sourceLineageTag: model_name
+		summarizeBy: none
+		sourceColumn: model_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column content_filter_results
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 04ba4b1a-07cb-4284-b6aa-42371285589d
+		sourceLineageTag: content_filter_results
+		summarizeBy: none
+		sourceColumn: content_filter_results
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_tokens
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: a802db6a-86f2-4c58-95b4-ef9e1cf17d79
+		sourceLineageTag: total_tokens
+		summarizeBy: sum
+		sourceColumn: total_tokens
+
+		annotation SummarizationSetBy = Automatic
+
+	column completion_tokens
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 0301dd9d-0274-4c99-b84a-caaf5b303242
+		sourceLineageTag: completion_tokens
+		summarizeBy: sum
+		sourceColumn: completion_tokens
+
+		annotation SummarizationSetBy = Automatic
+
+	column prompt_tokens
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 6f6e98bc-3506-4746-bb07-7ee8c1848615
+		sourceLineageTag: prompt_tokens
+		summarizeBy: sum
+		sourceColumn: prompt_tokens
+
+		annotation SummarizationSetBy = Automatic
+
+	column message_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 7d18f5ef-1bc0-480b-9e5f-25090ced221c
+		sourceLineageTag: message_id
+		summarizeBy: none
+		sourceColumn: message_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column session_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: a54e2319-a590-454c-92f3-285aa2be3cde
+		sourceLineageTag: session_id
+		summarizeBy: none
+		sourceColumn: session_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column trace_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 99454997-3648-43cc-8dd5-0ba375217dd5
+		sourceLineageTag: trace_id
+		summarizeBy: none
+		sourceColumn: trace_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column user_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: f480a1ff-2a41-4997-999d-2c0b3ff4aaa9
+		sourceLineageTag: user_id
+		summarizeBy: none
+		sourceColumn: user_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column agent_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 0e7f5b2d-13a5-49cd-8f1d-9be7196bbea6
+		sourceLineageTag: agent_id
+		summarizeBy: none
+		sourceColumn: agent_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column message_type
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 9431eded-a35a-4124-976a-0623cb60a841
+		sourceLineageTag: message_type
+		summarizeBy: none
+		sourceColumn: message_type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition chat_history = entity
+		mode: directLake
+		source
+			entityName: chat_history
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

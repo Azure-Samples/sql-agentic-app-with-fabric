@@ -74,7 +74,8 @@ def init_chat_db(database):
         tool_name = db.Column(db.String(255), nullable=False)
         tool_input = db.Column(db.JSON, nullable=False)
         tool_output = db.Column(db.JSON)
-        status = db.Column(db.String(50), default='pending')  # 'pending', 'success', 'error', 'timeout'
+        tool_message = db.Column(db.Text)
+        status = db.Column(db.String(50))
         
         # Additional tracking fields
         tokens_used = db.Column(db.Integer)
@@ -152,6 +153,7 @@ def init_chat_db(database):
                     tool_call_dict.update(tool_result_dict)
                     _ = self.log_tool_usage(tool_call_dict, trace_id)
             res = "All trace messages added..."
+            self.update_session_timestamp()
             return res
         def add_human_message(self, message: dict, trace_id: str):
             """Add the human message to chat history"""
@@ -247,10 +249,28 @@ def init_chat_db(database):
             db.session.commit()
             print("Tool result message added to chat history:", message["id"])
             return {"tool_output": message["content"], "status": message["status"]}
-
+        
+        def update_session_timestamp(self):
+            """Update the session's updated_at timestamp"""
+            session = ChatSession.query.filter_by(session_id=self.session_id).first()
+            if session:
+                session.updated_at = datetime.now()
+                db.session.commit()
+                print("Session timestamp updated:", self.session_id)
+     
         def log_tool_usage(self, tool_info: dict, trace_id: str):
             """Log detailed tool usage metrics"""
             existing = ToolUsage.query.filter_by(tool_call_id=tool_info.get("tool_call_id")).first()
+            tool_msg = ''
+            if(type(tool_info.get("tool_output")) is dict):
+                tool_msg = tool_info.get("tool_output").get('message', '')
+            else:
+                tool_msg = str(tool_info.get("tool_output"))
+            if("error" in str(tool_info.get("tool_output")).lower()):
+                tool_call_status = "Errored"
+            else:
+                tool_call_status = "Healthy"
+
             if existing:
                 existing.tool_output = tool_info.get("tool_output")
                 existing.trace_id = trace_id
@@ -259,7 +279,8 @@ def init_chat_db(database):
                 existing.tool_name = tool_info.get("tool_name") 
                 existing.tool_input = tool_info.get("tool_input") 
                 existing.tool_output = tool_info.get("tool_output") 
-                existing.status = tool_info.get("status") 
+                existing.tool_message = tool_msg
+                existing.status = tool_call_status
                 existing.tokens_used = tool_info.get("total_tokens")
                 db.session.commit()
             else:
@@ -271,7 +292,8 @@ def init_chat_db(database):
                     tool_name=tool_info.get("tool_name"),
                     tool_input=tool_info.get("tool_input"),
                     tool_output=tool_info.get("tool_output"),
-                    status=tool_info.get("status"),
+                    tool_message=tool_msg,
+                    status=tool_call_status,
                     tokens_used=tool_info.get("total_tokens")
                 )
                 db.session.add(tool_usage)

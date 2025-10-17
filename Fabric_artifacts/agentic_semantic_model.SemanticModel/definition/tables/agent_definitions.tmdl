@@ -1,0 +1,63 @@
+table agent_definitions
+	lineageTag: bd58869e-ba5b-4adf-acdc-1cfc3b790375
+	sourceLineageTag: [dbo].[agent_definitions]
+
+	column agent_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 8de24df4-a1a1-4cc1-b200-1990bd3bd3c8
+		sourceLineageTag: agent_id
+		summarizeBy: none
+		sourceColumn: agent_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 9b012c4c-a490-40a8-a7e4-44359f58545e
+		sourceLineageTag: name
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: cd91e2e0-fdc0-4919-9edb-7554a28e58df
+		sourceLineageTag: description
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	column llm_config
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 4fcb3089-825a-498d-804a-886da076bec0
+		sourceLineageTag: llm_config
+		summarizeBy: none
+		sourceColumn: llm_config
+
+		annotation SummarizationSetBy = Automatic
+
+	column prompt_template
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: cde763e9-e8fd-46e0-941c-6938ffcf2683
+		sourceLineageTag: prompt_template
+		summarizeBy: none
+		sourceColumn: prompt_template
+
+		annotation SummarizationSetBy = Automatic
+
+	partition agent_definitions = entity
+		mode: directLake
+		source
+			entityName: agent_definitions
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

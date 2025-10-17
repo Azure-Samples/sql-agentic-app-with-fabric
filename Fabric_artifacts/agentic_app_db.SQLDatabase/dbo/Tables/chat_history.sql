@@ -19,8 +19,7 @@ CREATE TABLE [dbo].[chat_history] (
     [tool_input]             NVARCHAR (MAX) NULL,
     [tool_output]            NVARCHAR (MAX) NULL,
     [tool_id]                NVARCHAR (255) NULL,
-    PRIMARY KEY CLUSTERED ([message_id] ASC),
-    CONSTRAINT [FK_chat_history_session] FOREIGN KEY ([session_id]) REFERENCES [dbo].[chat_sessions] ([session_id])
+    PRIMARY KEY CLUSTERED ([message_id] ASC)
 );
 
 

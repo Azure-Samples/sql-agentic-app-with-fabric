@@ -1,0 +1,30 @@
+relationship 8616dc02-1363-df85-b392-071c3132e70b
+	fromColumn: chat_history.session_id
+	toColumn: chat_sessions.session_id
+
+relationship 1c021355-f0a3-54e8-7c5a-f9f40afc891c
+	fromColumn: chat_history.agent_id
+	toColumn: agent_definitions.agent_id
+
+relationship 47ac6399-7f6f-f273-e16c-b795e683f3f6
+	fromColumn: chat_history.tool_id
+	toColumn: tool_definitions.tool_id
+
+relationship 5a0c28f5-7016-c7cb-39a9-7419f7cc90d9
+	fromColumn: chat_history.trace_id
+	toColumn: UserAsks.trace_id
+
+relationship 39859493-c1a3-154b-aed8-5bfcc11aa173
+	fromColumn: chat_history.trace_id
+	toColumn: ContentIssues.trace_id
+
+relationship 04780784-ec5a-103b-510e-b658ded2d615
+	fromColumn: UserAsks.session_id
+	toColumn: session_duration_date.session_id
+
+relationship 36c33102-f70a-7a6d-71ef-3f8103131189
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: chat_history.tool_call_id
+	toColumn: tool_usage.tool_call_id
+

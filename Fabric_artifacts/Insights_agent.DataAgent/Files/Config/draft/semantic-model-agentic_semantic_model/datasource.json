@@ -1,0 +1,785 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/dataAgent/definition/dataSource/1.0.0/schema.json",
+  "artifactId": "b87a4a37-b29e-a3e3-4f2b-7f08e65b5262",
+  "workspaceId": "00000000-0000-0000-0000-000000000000",
+  "dataSourceInstructions": null,
+  "displayName": "agentic_semantic_model",
+  "type": "semantic_model",
+  "metadata": {},
+  "elements": [
+    {
+      "id": "bd58869e-ba5b-4adf-acdc-1cfc3b790375",
+      "is_selected": true,
+      "display_name": "agent_definitions",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "8de24df4-a1a1-4cc1-b200-1990bd3bd3c8",
+          "is_selected": true,
+          "display_name": "agent_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "cd91e2e0-fdc0-4919-9edb-7554a28e58df",
+          "is_selected": true,
+          "display_name": "description",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4fcb3089-825a-498d-804a-886da076bec0",
+          "is_selected": true,
+          "display_name": "llm_config",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9b012c4c-a490-40a8-a7e4-44359f58545e",
+          "is_selected": true,
+          "display_name": "name",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "cde763e9-e8fd-46e0-941c-6938ffcf2683",
+          "is_selected": true,
+          "display_name": "prompt_template",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "0ffab876-d0b5-49ce-aa90-774cb47e1dff",
+      "is_selected": true,
+      "display_name": "chat_history",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "0e7f5b2d-13a5-49cd-8f1d-9be7196bbea6",
+          "is_selected": true,
+          "display_name": "agent_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0301dd9d-0274-4c99-b84a-caaf5b303242",
+          "is_selected": true,
+          "display_name": "completion_tokens",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5cbcfd36-47a6-4ac0-a17b-b2e8b808cf5e",
+          "is_selected": true,
+          "display_name": "content",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "04ba4b1a-07cb-4284-b6aa-42371285589d",
+          "is_selected": true,
+          "display_name": "content_filter_results",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "bd3d9eab-3dda-437c-b8f0-e75177eb45a7",
+          "is_selected": true,
+          "display_name": "finish_reason",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7d18f5ef-1bc0-480b-9e5f-25090ced221c",
+          "is_selected": true,
+          "display_name": "message_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9431eded-a35a-4124-976a-0623cb60a841",
+          "is_selected": true,
+          "display_name": "message_type",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2ec8ed2b-d83c-4576-9151-8626c405d01c",
+          "is_selected": true,
+          "display_name": "model_name",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6f6e98bc-3506-4746-bb07-7ee8c1848615",
+          "is_selected": true,
+          "display_name": "prompt_tokens",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "184fc87b-57d8-44c9-acfd-3e9caa1041eb",
+          "is_selected": true,
+          "display_name": "response_time_ms",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a54e2319-a590-454c-92f3-285aa2be3cde",
+          "is_selected": true,
+          "display_name": "session_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5a1e9467-ce76-4d99-83a9-bb5a2fe8e347",
+          "is_selected": true,
+          "display_name": "tool_call_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "31022de7-f66d-408a-88bd-f885630fdad8",
+          "is_selected": true,
+          "display_name": "tool_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "915bc1ae-9ab0-4855-a20f-f02b9a9eb001",
+          "is_selected": true,
+          "display_name": "tool_input",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "fa928e5d-fbb5-4a04-b45b-b643d2b9ce96",
+          "is_selected": true,
+          "display_name": "tool_name",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7e5ef221-99e2-491b-a578-632d755dec45",
+          "is_selected": true,
+          "display_name": "tool_output",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a802db6a-86f2-4c58-95b4-ef9e1cf17d79",
+          "is_selected": true,
+          "display_name": "total_tokens",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "94914c3b-151b-402b-93b1-0f677def435e",
+          "is_selected": true,
+          "display_name": "trace_end",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "99454997-3648-43cc-8dd5-0ba375217dd5",
+          "is_selected": true,
+          "display_name": "trace_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "663dab2a-32de-4897-8366-7d6b8ac95877",
+          "is_selected": true,
+          "display_name": "trace_with_tool",
+          "type": "semantic_model.measure",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f480a1ff-2a41-4997-999d-2c0b3ff4aaa9",
+          "is_selected": true,
+          "display_name": "user_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "00977eb2-638e-408e-b7ba-6db683884f10",
+      "is_selected": true,
+      "display_name": "chat_sessions",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "6dd82fc6-a5d7-4bbe-ae45-a8b94f427378",
+          "is_selected": true,
+          "display_name": "created_at",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9c9f52eb-d346-4e0c-ac36-88942a8160be",
+          "is_selected": true,
+          "display_name": "high_value_tasks",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e4e7179a-5e9a-4d73-a4f9-bb94e34ac27a",
+          "is_selected": true,
+          "display_name": "session_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f1ad6da5-ef04-4705-a59f-c622c652c024",
+          "is_selected": true,
+          "display_name": "title",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "afedf7da-f9c7-4680-90c4-a08ba61c1b1f",
+          "is_selected": true,
+          "display_name": "updated_at",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "528488d6-4c67-455d-b035-02a3a97ebace",
+          "is_selected": true,
+          "display_name": "user_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "579aa366-f0a9-4033-882e-cef2ebe55dd8",
+      "is_selected": true,
+      "display_name": "ContentIssues",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "5ccc871a-2807-41d5-ae2d-32db750c84c0",
+          "is_selected": true,
+          "display_name": "agent_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "924bcfc5-7db3-4bd9-aa13-af6d0c745116",
+          "is_selected": true,
+          "display_name": "content",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7ff87f13-1596-467d-b026-f7e310280dc6",
+          "is_selected": true,
+          "display_name": "content_filter_results",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e9790d77-162a-452a-b3a6-dca32864a415",
+          "is_selected": true,
+          "display_name": "hate_filtered",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8d5833fa-156d-4e9b-824a-45f4219f86e5",
+          "is_selected": true,
+          "display_name": "hate_severity",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "fbf6375b-de22-4ad7-972f-bb2daa9ddff7",
+          "is_selected": true,
+          "display_name": "jailbreak_detected",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5114eeb1-e23c-4866-a189-0807d1c795dd",
+          "is_selected": true,
+          "display_name": "jailbreak_filtered",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "48fe582c-12f2-49ca-98ad-c47c11f296d2",
+          "is_selected": true,
+          "display_name": "message_type",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "786dad60-1f94-4e97-8512-e6c4c30f5632",
+          "is_selected": true,
+          "display_name": "self_harm_filtered",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d2af728e-1a74-4045-9056-0d65fd093c5a",
+          "is_selected": true,
+          "display_name": "self_harm_severity",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "43cc5dab-c8f4-410d-ba64-474541af1eaf",
+          "is_selected": true,
+          "display_name": "session_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5317d575-e736-4d52-b574-fc130db3499d",
+          "is_selected": true,
+          "display_name": "sexual_filtered",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f8c6df3f-2ba0-42df-8ef0-c24e75326ecb",
+          "is_selected": true,
+          "display_name": "sexual_severity",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "97d33257-33d9-48cb-ae0f-a5bec4b6538e",
+          "is_selected": true,
+          "display_name": "trace_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "623ddde5-0fe3-4830-828b-6f6b1e39838f",
+          "is_selected": true,
+          "display_name": "user_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "af08a27a-7db2-41cb-bcc3-126baa3f492e",
+          "is_selected": true,
+          "display_name": "violence_filtered",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2c4e9bdc-039d-4ad1-8d07-e5ce63774328",
+          "is_selected": true,
+          "display_name": "violence_severity",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "4da4da44-7329-4646-92e6-c80193e34d96",
+      "is_selected": true,
+      "display_name": "session_duration_date",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "aa577236-433c-4006-9d10-d369c251b269",
+          "is_selected": true,
+          "display_name": "date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "342d10d2-9549-47ab-af04-8211591334f0",
+          "is_selected": true,
+          "display_name": "sess_duration",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f62c1b4a-2af6-4c8e-b488-caa6a1708a0e",
+          "is_selected": true,
+          "display_name": "session_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1e96dacb-86f3-414f-a5bf-5d487faeca1a",
+          "is_selected": true,
+          "display_name": "user_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "fd667c89-ce6a-4fd6-b66c-25e0a8033602",
+      "is_selected": true,
+      "display_name": "tool_definitions",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "792fb2b2-c673-4fb8-9f39-ab5e9a4857da",
+          "is_selected": true,
+          "display_name": "cost_per_call_cents",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9f36b971-515f-4e6b-852e-b0397b6dbf57",
+          "is_selected": true,
+          "display_name": "created_at",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9967663c-7234-4917-8480-739e1d11ee26",
+          "is_selected": true,
+          "display_name": "description",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6c33b5f4-0fde-416f-bae5-5550665bd20e",
+          "is_selected": true,
+          "display_name": "input_schema",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b8422485-8321-4bce-a083-62262f9c4b65",
+          "is_selected": true,
+          "display_name": "is_active",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7a795dbe-4231-4bd6-bd7f-3cbf285d8998",
+          "is_selected": true,
+          "display_name": "name",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1582062a-b1da-472b-a096-4b56dc6a2a97",
+          "is_selected": true,
+          "display_name": "tool_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "dda02e33-0840-4060-8e89-9d3678bb8752",
+          "is_selected": true,
+          "display_name": "updated_at",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "566061af-5d55-4ddc-b2d9-01f8ae089da9",
+          "is_selected": true,
+          "display_name": "version",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "2afd3ee3-0766-4610-b26c-d61460d2f5dc",
+      "is_selected": true,
+      "display_name": "tool_usage",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "ef0a5cbe-1a71-4f72-aa25-28ae4d9f5659",
+          "is_selected": true,
+          "display_name": "session_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f41f90df-5c39-40c9-870d-0d5130ebcf04",
+          "is_selected": true,
+          "display_name": "status",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "59cf22f0-fd2b-46c6-80eb-c2d657358552",
+          "is_selected": true,
+          "display_name": "tokens_used",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ae2d9124-3328-4d4f-a503-6b888f6b8826",
+          "is_selected": true,
+          "display_name": "tool_call_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9e696af6-0a4a-4ca6-8711-3b19b8d19748",
+          "is_selected": true,
+          "display_name": "tool_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8db3ea1d-f8b0-427f-9825-cfbb7ac9862f",
+          "is_selected": true,
+          "display_name": "tool_input",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a6035fd0-34fd-48ed-aa1d-8467f21798fd",
+          "is_selected": true,
+          "display_name": "tool_message",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ffef35fe-c042-4d6d-9f5b-4736c7e25ad8",
+          "is_selected": true,
+          "display_name": "tool_name",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "22673abe-5e0e-425e-ba9b-fb9873030d78",
+          "is_selected": true,
+          "display_name": "tool_output",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "15fb0149-1c78-4424-ac0f-dbfb0a22a269",
+          "is_selected": true,
+          "display_name": "trace_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "52767da3-69e1-43c9-84f1-52590b020423",
+      "is_selected": true,
+      "display_name": "UserAsks",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "6d40b400-c647-4576-b646-8ccee4375988",
+          "is_selected": true,
+          "display_name": "content",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "83e933b7-cde6-4a65-810a-592c81b99f8b",
+          "is_selected": true,
+          "display_name": "date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "39d63b2c-7e11-4f98-9e4e-36cf80b69fc5",
+          "is_selected": true,
+          "display_name": "response_time_seconds",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "14bd9ba5-c71c-429c-90dc-ecd26d0bcf5c",
+          "is_selected": true,
+          "display_name": "session_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "736cb527-fdd4-48cc-8ae5-22bda6c63a5d",
+          "is_selected": true,
+          "display_name": "trace_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0a1a56f9-adec-4f95-9523-50c0564bc0aa",
+          "is_selected": true,
+          "display_name": "user_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    }
+  ]
+}

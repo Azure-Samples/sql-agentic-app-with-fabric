@@ -6,7 +6,8 @@ CREATE TABLE [dbo].[tool_usage] (
     [tool_name]    NVARCHAR (255) NOT NULL,
     [tool_input]   NVARCHAR (MAX) NOT NULL,
     [tool_output]  NVARCHAR (MAX) NULL,
-    [status]       NVARCHAR (50)  DEFAULT ('pending') NULL,
+    [tool_message] NVARCHAR (MAX) NULL,
+    [status]       NVARCHAR (50)  NULL,
     [tokens_used]  INT            NULL,
     PRIMARY KEY CLUSTERED ([tool_call_id] ASC)
 );
