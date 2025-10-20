@@ -122,7 +122,7 @@ Pygments==2.19.2
 PyJWT==2.10.1
 pyodbc==5.2.0
 pyparsing==3.2.3
-pypdf==5.8.0
+pypdf==6.0.0
 pypdfium2==4.30.0
 python-dateutil==2.9.0.post0
 python-dotenv==1.1.1
