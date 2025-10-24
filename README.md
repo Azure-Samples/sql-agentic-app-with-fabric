@@ -55,14 +55,21 @@ Through a hands-on interface, users can see the practical difference between wri
 ---
 ## Set up required resources
 
-### 1. Fork and clone the Repository
-- Fork the repo (click the fork button, this will create a copy of the repo under your GitHub account.)
-- Clone the forked repo: Navigate to your forked repository on GitHub and click the "Code" button. Copy the URL provided for cloning. Then run below in terminal:
+### 1. Set up your repo
+- Clone this repo: navigate to the repository on GitHub and click the "Code" button. Copy the URL provided for cloning.
+- Open a terminal window on your machine and run below:
 
 ```bash
-git clone <copied url of forked repo>
-cd <sql-agentic-app-with-fabric or main repo folder name if you have changed the name when forking>
+git clone <copied url>
+cd sql-agentic-app-with-fabric  # root folder of the repo
 ```
+- Create a **private** repo in your github account, with the same name. Since you will be adding sensitve credentials, **repo must be private**.
+- Go back to terminal (you should be in the root folder of the repo you cloned) and push the content to your private repo by running below:
+
+```bash
+ git push https://github.com/[replace with you git username]/[replace with your repo name].git
+```
+
 ### 2. Set up your Fabric account
 
 - If you do not already have access to a Fabric capacity, you can easily enable a Microsoft Fabric trial capacity for free which will give you free access for 60 days to all features needed for this demo: https://learn.microsoft.com/en-us/fabric/fundamentals/fabric-trial
@@ -70,10 +77,7 @@ cd <sql-agentic-app-with-fabric or main repo folder name if you have changed the
 - In Home tab (with Welcome to Fabric title), click on "New workspace" and proceed to create your workspace for this demo.
 
 ### 3. Automatic set up of all required Fabric resources and artifacts 
-To easily set up your Fabric workspace with all required artifacts for this demo, you need to link your Fabric workspace with your repo. And pull artifacts in two steps:
-
-1. Pull data artifacts only
-2. Pull analytics artifacts
+To easily set up your Fabric workspace with all required artifacts for this demo, you need to link your Fabric workspace with your repo. 
 
 You only need to do below steps one time.
 
@@ -81,11 +85,24 @@ You only need to do below steps one time.
 
 1. Go to your workspace and click on "Workspace settings" on top right of the page
 2. Go to Git integration tab -> Click on GitHub tile and click on "Add account"
-3. Choose a name, paste your fine grained personal access token for the repo you just forked (don't know how to generate this? there are a lot of tutorials online such as: https://thetechdarts.com/generate-personal-access-token-in-github/)
-4. paste the forked repo url and connect
-5. After connecting to the repo, you will see the option in the same tab to provide the branch and folder name. Branch should be "main" and folder name should be "Fabric_database_artifacts"
+3. Choose a name, paste your fine grained personal access token for the private repo you juts created (don't know how to generate this? there are a lot of tutorials online such as: https://thetechdarts.com/generate-personal-access-token-in-github/)
+4. paste the repo url and connect
+5. After connecting to the repo, you will see the option in the same tab to provide the branch and folder name. Branch should be "main" and folder name should be "Fabric_artifacts"
     - Click on "Connect and Sync" 
     - Now the process of pulling all Fabric artifacts from the repo to your workspace starts. This may take a few minutes. Wait untill all is done (you will see green check marks)
+    
+#### Step 2: re-deploy to connect semantic model to the right database endpoint
+
+- In the first step, data artifacts were deployed, but the semantic model needs to be redeloyed by provding the correct database endpoint parameters which you would need to obtain and provide manually as below:
+1. Obtain below values (copy and keep somewhere)
+    - **SQL server connection string**: First, go to the **SQL analytics endpoint** of the agentic_lake, go to settings -> SQL endpoint -> copy value under SQL connection string  (paste it somewhere to keep it for now)
+    - **Lakehouse analytics GUID**: Look at the address bar, you should see something like this: *https://app.fabric.microsoft.com/groups/[first string]/mirroredwarehouses/**[second string]**?experience=fabric-developer*
+        - copy the value you see in position of second string. 
+2. Now go to: **Fabric_artifacts\agentic_semantic_model.SemanticModel\definition**, open the file called **expressions.tmdl** and replace the values with the ones you just retrieved. *Save the file and push it to your repo.*
+
+3. Now go back to your Fabric workspace and trigger an update via Source Control
+
+4. This will start to set everything up and may take a few minutes 
  
 ##### Populate your database with sample data
 
@@ -97,21 +114,7 @@ You only need to do below steps one time.
 
 **Create required views**
 - go to the SQL analytics endpoint of your agentic_lake
-- go to go to Data_Ingest and run all 3 queries that you see in file views.sql
-
-#### Step 2
-- Final step is to deploy the semantic model, data agent and visualizations!
-1. You need to obtain two parameter values:
-    - **SQL server connection string**: First, go to the **SQL analytics endpoint** of the agentic_lake, go to settings -> SQL endpoint -> copy value under SQL connection string  (paste it somewhere to keep it for now)
-    - **Lakehouse analytics GUID**: Look at the address bar, you should see something like this: *https://app.fabric.microsoft.com/groups/[first string]/mirroredwarehouses/**[second string]**?experience=fabric-developer*
-        - copy the value you see in position of second string. 
-2. Now go to: Fabric_analytics_artifacts\agentic_semantic_model.SemanticModel\definition, open the file called **expressions.tmdl** and replace the values with the ones you just retrieved. Save the file and push it to your repo. 
-
-3. Now go back to Git integration tab, disconnect the repo and reconnect it using the same branch (main) but with this folder name: **Fabric_analytics_artifacts** 
-
-4. Choose sync content from Git to workspace. 
-5. This will start to set everything up and may take a few minutes 
-
+- go to Data_Ingest folder and run all 3 queries that you see in file views.sql
 
 
 

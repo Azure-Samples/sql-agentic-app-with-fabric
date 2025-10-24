@@ -6,4 +6,3 @@ expression DatabaseQuery =
 	lineageTag: 6a0481fe-610a-40d9-a67d-1874dc520a08
 
 	annotation PBI_IncludeFutureArtifacts = False
-
