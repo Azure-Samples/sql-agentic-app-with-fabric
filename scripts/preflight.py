@@ -146,9 +146,14 @@ def fix_hint(m): print(f"     {C}→{X} {m}"); fixes.append(m)
 
 
 def run_cmd(cmd, check=False, capture=True):
+    # On Windows, the az CLI ships as az.cmd, which subprocess.run with a list
+    # of args cannot resolve through PATH without going through the shell.
+    # shell=True lets Windows resolve .cmd / .bat shims (see issue #62).
+    use_shell = sys.platform == "win32"
     try:
         return subprocess.run(
             cmd, capture_output=capture, text=True, check=check, timeout=120,
+            shell=use_shell,
         )
     except subprocess.TimeoutExpired as e:
         return subprocess.CompletedProcess(cmd, 124, "", str(e))
